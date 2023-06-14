@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.Scanner;
 public class UserMain {
     Scanner scanner = new Scanner(System.in);
-    private void signIn() throws SQLException, IOException {
+    private void signIn() throws SQLException, IOException, ParseException {
         String user_name = "";
         String password = "";
         System.out.println("-------------------------------------------");
@@ -41,24 +41,17 @@ public class UserMain {
             System.out.println("* * * * * * * * * * * * * *");
             System.out.println("*         WELCOME!        *");
             System.out.println("* * * * * * * * * * * * * *");
+            relate();
         } else {
             System.out.println("Invalid credentials");
-            return;
         }
-        brand();
     }
     private void brand() throws SQLException, IOException {
         BrandService brandService = new BrandService();
-        Connection connection = MyConnection.getConnection();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String brand_name = "";
         String website = "";
         String description = "";
-        System.out.println("-input: ");
-        int input = scanner.nextInt();
-        if (Objects.equals(input, 0)){
-            return;
-        }
         System.out.println();
         System.out.println("________________________________________________");
         System.out.print("Brand_name: ");
@@ -91,7 +84,6 @@ public class UserMain {
 //        category(brandId);
     }
     private void category() throws SQLException, IOException {
-        Connection connection = MyConnection.getConnection();
         CategoryService categoryService = new CategoryService();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String category_name = "";
@@ -163,6 +155,7 @@ public class UserMain {
             System.out.println("ID: "+ id + " | Name: " + name + " | Description: "+ description);
             System.out.println("---------------------------------------------------------");
         }
+        System.out.println("**************************************************************************");
         System.out.print("which id do you want for category: ");
         id_cat = scanner.nextInt();
         String sql = "SELECT * FROM brand";
@@ -179,7 +172,6 @@ public class UserMain {
         id_br = scanner.nextInt();
         java.sql.Date date = new java.sql.Date(year - 1900, month - 1, day);
         productService.register(product_name, date, id_cat, id_br);
-
     }
     private void signUp() throws SQLException, IOException {
         UserService userService = new UserService();
@@ -215,7 +207,6 @@ public class UserMain {
     }
     private void shareHolder() throws SQLException, IOException {
         ShareholderService shareholderService = new ShareholderService();
-        Connection connection = MyConnection.getConnection();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String name = "";
         String phoneNumber = "";
@@ -239,37 +230,56 @@ public class UserMain {
         }
         shareholderService.register(name, phoneNumber, nationalCode);
         System.out.println("the information has been added successfully!!");
-        String sql = "SELECT id FROM shareholder WHERE name = ?";
-        PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setString(1, name);
-        ResultSet resultSet = preparedStatement.executeQuery();
-        int userId_shareHolder = 0;
-        if (resultSet.next()) {
-            userId_shareHolder = resultSet.getInt("id");
-            System.out.println("User ID: " + userId_shareHolder);
-        }
-        shareHolderBrand(userId_shareHolder);
+//        String sql = "SELECT id FROM shareholder WHERE name = ?";
+//        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+//        preparedStatement.setString(1, name);
+//        ResultSet resultSet = preparedStatement.executeQuery();
+//        int userId_shareHolder = 0;
+//        if (resultSet.next()) {
+//            userId_shareHolder = resultSet.getInt("id");
+//            System.out.println("User ID: " + userId_shareHolder);
+//        }
+//        shareHolderBrand(userId_shareHolder);
     }
-    private void shareHolderBrand(int id_share) throws SQLException{
+    private void shareHolderBrand() throws SQLException{
+        Connection connection = MyConnection.getConnection();
         ShareholderBrandService shareholderBrandService = new ShareholderBrandService();
-        int id = 0;
         System.out.println("________________________________________________");
-        System.out.println("if you press /c it will exit! ");
-        System.out.print("which brand do you want to be its shareholder: ");
-        id = scanner.nextInt();
-        if (Objects.equals(id, Constants.ExitCharacter)) {
-            return;
+        int brandId = 0;
+        int shareholderId = 0;
+        String sql = "SELECT * FROM brand";
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(sql);
+        while (resultSet.next()) {
+            int id = resultSet.getInt("id");
+            String name = resultSet.getString("name");
+            String description = resultSet.getString("description");
+            System.out.println("---------------------------------------------------------");
+            System.out.println("ID: " + id + "| Name: " + name + "| Description: " + description);
+            System.out.println("---------------------------------------------------------");
         }
-        shareholderBrandService.register(id_share, id);
+        System.out.print("which brand id do you want: ");
+        brandId = scanner.nextInt();
+        String sql1 = "SELECT * FROM shareholder";
+        ResultSet resultSet1 = statement.executeQuery(sql1);
+        while (resultSet1.next()) {
+            int id = resultSet1.getInt("id");
+            String name = resultSet1.getString("name");
+            String phoneNumber = resultSet1.getString("phone_number");
+            String nationalCode = resultSet1.getString("national_code");
+            System.out.println("--------------------------------------------------------------------------------------------------");
+            System.out.println("ID: " + id + "| Name: " + name + "| phone_number: " + phoneNumber + "national_code: " +nationalCode);
+            System.out.println("--------------------------------------------------------------------------------------------------");
+        }
+        System.out.print("which shareholder id do you want: ");
+        shareholderId = scanner.nextInt();
+        shareholderBrandService.register(shareholderId, brandId);
         System.out.println("the information has been added successfully!!");
     }
     private void finished(){
         System.out.println("                      good bye have a nice a day                      ");
     }
-    private void load() throws SQLException {
-        panel3();
-        System.out.print("-input: ");
-        int input = scanner.nextInt();
+    private void load(int input) throws SQLException {
         BrandService brandService = new BrandService();
         CategoryService categoryService = new CategoryService();
         ProductService productService = new ProductService();
@@ -337,10 +347,7 @@ public class UserMain {
             }
         }
     }
-    private void update() throws IOException, SQLException, ParseException {
-        panel3();
-        System.out.println("-input: ");
-        int input = scanner.nextInt();
+    private void update(int input) throws IOException, SQLException, ParseException {
         BrandService brandService = new BrandService();
         CategoryService categoryService = new CategoryService();
         ProductService productService = new ProductService();
@@ -448,10 +455,7 @@ public class UserMain {
             userService.update(id, which,input1);
         }
     }
-    private void delete() throws SQLException {
-        panel3();
-        System.out.println("-input: ");
-        int input = scanner.nextInt();
+    private void delete(int input) throws SQLException {
         BrandService brandService = new BrandService();
         CategoryService categoryService = new CategoryService();
         ProductService productService = new ProductService();
@@ -517,7 +521,7 @@ public class UserMain {
             userService.delete(id);
         }
     }
-    private String panel0(){
+    private void panel0(){
         System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *");
         System.out.println("*       Hello Welcome!                                        *");
         System.out.println("*       Would you please select which one you want to do:     *");
@@ -525,9 +529,125 @@ public class UserMain {
         System.out.println("*       2.SignIn                                              *");
         System.out.println("*       3.exit                                                *");
         System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *");
-        System.out.print("input: ");
-        String input = scanner.next();
-        return input;
+    }
+    private void relate() throws SQLException, IOException, ParseException {
+        boolean flag = true;
+        while (flag) {
+            panel2();
+            System.out.print("which one you want: ");
+            String input = scanner.next();
+            switch (input) {
+                case ("1") -> {
+                    panel1();
+                    System.out.println("what do you want to do: ");
+                    int ask = scanner.nextInt();
+                    if (ask == 1) {
+                        brand();
+                    }
+                    if (ask == 2) {
+                        load(1);
+                    }
+                    if (ask == 3) {
+                        update(1);
+                    }
+                    if (ask == 4) {
+                        delete(1);
+                    }
+                }
+                case ("2") -> {
+                    panel1();
+                    System.out.println("what do you want to do: ");
+                    int ask = scanner.nextInt();
+                    if (ask == 1) {
+                        category();
+                    }
+                    if (ask == 2) {
+                        load(2);
+                    }
+                    if (ask == 3) {
+                        update(2);
+                    }
+                    if (ask == 4) {
+                        delete(2);
+                    }
+                }
+                case ("3") -> {
+                    panel1();
+                    System.out.println("what do you want to do: ");
+                    int ask = scanner.nextInt();
+                    if (ask == 1) {
+                        product();
+                    }
+                    if (ask == 2) {
+                        load(3);
+                    }
+                    if (ask == 3) {
+                        update(3);
+                    }
+                    if (ask == 4) {
+                        delete(3);
+                    }
+                }
+                case ("4") -> {
+                    panel1();
+                    System.out.println("what do you want to do: ");
+                    int ask = scanner.nextInt();
+                    if (ask == 1) {
+                        shareHolder();
+                    }
+                    if (ask == 2) {
+                        load(4);
+                    }
+                    if (ask == 3) {
+                        update(4);
+                    }
+                    if (ask == 4) {
+                        delete(4);
+                    }
+                }
+                case ("5") -> {
+                    panel1();
+                    System.out.print("what do you want to do: ");
+                    int ask = scanner.nextInt();
+                    if (ask == 1) {
+                        shareHolderBrand();
+                    }
+                    if (ask == 2) {
+                        load(5);
+                    }
+                    if (ask == 3) {
+                        update(5);
+                    }
+                    if (ask == 4) {
+                        delete(5);
+                    }
+                }
+                case ("6") -> {
+                    System.out.println("* * * * * * * * * * * *");
+                    System.out.println("* 1.load              *");
+                    System.out.println("* 2.update            *");
+                    System.out.println("* 3.delete            *");
+                    System.out.println("* * * * * * * * * * * *");
+                    System.out.print("what do you want to do: ");
+                    int ask = scanner.nextInt();
+                    if (ask == 1) {
+                        load(6);
+                    }
+                    if (ask == 2) {
+                        update(6);
+                    }
+                    if (ask == 3) {
+                        delete(6);
+                    }
+                }
+                case ("7") -> {
+                    return;
+                }
+                default -> {
+                    invalidCommand();
+                }
+            }
+        }
     }
     private void panel2(){
         System.out.println("* * * * * * * * * * * * *");
@@ -549,8 +669,30 @@ public class UserMain {
         System.out.println("* 5.exit                *");
         System.out.println("* * * * * * * * * * * * *");
     }
+    private void invalidCommand(){
+        System.out.println("invalid command!!");
+    }
     public void run() throws SQLException, IOException, ParseException {
         boolean flag = true;
-
+        while (flag) {
+            panel0();
+            System.out.print("input: ");
+            String input = scanner.next();
+            switch (input) {
+                case ("1") -> {
+                    signUp();
+                }
+                case ("2") -> {
+                    signIn();
+                }
+                case ("3") -> {
+                    flag = false;
+                    finished();
+                }
+                default -> {
+                    invalidCommand();
+                }
+            }
+        }
     }
 }
