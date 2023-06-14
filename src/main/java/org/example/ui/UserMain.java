@@ -52,7 +52,7 @@ public class UserMain {
         String brand_name = "";
         String website = "";
         String description = "";
-        System.out.println();
+        System.out.println("if you press /c it will exit! ");
         System.out.println("________________________________________________");
         System.out.print("Brand_name: ");
         brand_name = br.readLine();
