@@ -260,6 +260,9 @@ public class UserMain {
         }
         System.out.print("which brand id do you want: ");
         brandId = scanner.nextInt();
+        if (Objects.equals(brandId, Constants.ExitCharacter)){
+            return;
+        }
         String sql1 = "SELECT * FROM shareholder";
         ResultSet resultSet1 = statement.executeQuery(sql1);
         while (resultSet1.next()) {
@@ -273,6 +276,9 @@ public class UserMain {
         }
         System.out.print("which shareholder id do you want: ");
         shareholderId = scanner.nextInt();
+        if (Objects.equals(shareholderId, Constants.ExitCharacter)){
+            return;
+        }
         shareholderBrandService.register(shareholderId, brandId);
         System.out.println("the information has been added successfully!!");
     }
@@ -290,55 +296,61 @@ public class UserMain {
         switch (input){
             case (1) -> {
                 System.out.println("------------------------------------");
+                System.out.println("if you press /c it will exit! ");
                 System.out.print("please give the id: ");
                 id = scanner.nextInt();
-                if (Objects.equals(id, 0)){
-                    break;
+                if (Objects.equals(id, Constants.ExitCharacter)){
+                    return;
                 }
                 brandService.load(id);
             }
             case (2) -> {
                 System.out.println("------------------------------------");
+                System.out.println("if you press /c it will exit! ");
                 System.out.print("please give the id: ");
                 id = scanner.nextInt();
-                if (Objects.equals(id, 0)){
+                if (Objects.equals(id, Constants.ExitCharacter)){
                     return;
                 }
                 categoryService.load(id);
             }
             case (3) -> {
                 System.out.println("------------------------------------");
+                System.out.println("if you press /c it will exit! ");
                 System.out.print("please give the id: ");
                 id = scanner.nextInt();
-                if (Objects.equals(id, 0)){
-                    break;
+                if (Objects.equals(id, Constants.ExitCharacter)){
+                    return;
                 }
                 productService.load(id);
             }
             case (4) -> {
                 System.out.println("------------------------------------");
+                System.out.println("if you press /c it will exit! ");
                 System.out.print("please give the id: ");
                 id = scanner.nextInt();
-                if (Objects.equals(id, 0)){
-                    break;
+                if (Objects.equals(id, Constants.ExitCharacter)){
+                    return;
                 }
                 shareholderService.load(id);
             }
             case (5) ->{
                 System.out.println("------------------------------------");
+                System.out.println("if you press /c it will exit! ");
                 System.out.print("please give the id: ");
                 id = scanner.nextInt();
-                if (Objects.equals(id, 0)){
-                    break;
+                if (Objects.equals(id, Constants.ExitCharacter)){
+                    return;
                 }
                 shareholderBrandService.load(id);
             }
             case (6) ->{
                 System.out.println("------------------------------------");
+                System.out.println("if you press /c it will exit! ");
                 System.out.print("please give the id: ");
                 id = scanner.nextInt();
-                if (Objects.equals(id, 0)){
-                    break;
+                if (Objects.equals(id, Constants.ExitCharacter)){
+                    return;
                 }
                 userService.load(id);
             }
@@ -359,6 +371,7 @@ public class UserMain {
         int which = 0;
         String input1 ="";
         if (input == 1){
+            System.out.println("if you press /c it will exit! ");
             System.out.println("--------------------------");
             System.out.println("id: ");
             id = scanner.nextInt();
