@@ -627,6 +627,7 @@ public class UserMain {
                     System.out.println("* 1.load              *");
                     System.out.println("* 2.update            *");
                     System.out.println("* 3.delete            *");
+                    System.out.println("* 4.exit              *");
                     System.out.println("* * * * * * * * * * * *");
                     System.out.print("what do you want to do: ");
                     int ask = scanner.nextInt();
