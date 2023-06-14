@@ -12,7 +12,11 @@ public class ShareholderService {
         shareholderRepository.saveShareholder(shareholder);
     }
     public void load(int id) throws  SQLException{
-        System.out.println(shareholderRepository.loadShareholder(id));
+        System.out.println("------------------------------------------------------------");
+        System.out.println("The name: "+shareholderRepository.loadShareholder(id).getName());
+        System.out.println("The phone_number: "+shareholderRepository.loadShareholder(id).getPhoneNumber());
+        System.out.println("The national_code: "+shareholderRepository.loadShareholder(id).getNationalCode());
+        System.out.println("------------------------------------------------------------");
     }
     public void update(int id, int which, String input) throws SQLException{
         shareholderRepository.updateShareholder(id, which , input);

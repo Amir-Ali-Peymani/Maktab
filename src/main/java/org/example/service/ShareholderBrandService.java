@@ -12,7 +12,10 @@ public class ShareholderBrandService {
         shareholderBrandRepository.saveShareholderBrandRepository(shareholderBrand);
     }
     public void load(int id) throws SQLException {
-        System.out.println(shareholderBrandRepository.loadShareholderBrand(id));
+        System.out.println("------------------------------------------------------------");
+        System.out.println("The shareholderBrand id: "+shareholderBrandRepository.loadShareholderBrand(id).getShareholder());
+        System.out.println("The brand id: "+shareholderBrandRepository.loadShareholderBrand(id).getBrandId());
+        System.out.println("------------------------------------------------------------");
     }
     public void update(int id, int shar_id, int brand) throws SQLException {
         shareholderBrandRepository.updateShareholderBrand(id,shar_id, brand);

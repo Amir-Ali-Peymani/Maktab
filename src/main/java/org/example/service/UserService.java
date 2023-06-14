@@ -12,10 +12,12 @@ public class UserService {
         userRepository.saveUser(user);
     }
     public void load(int id) throws SQLException {
-        System.out.println(userRepository.loadUser(id).getName());
-        System.out.println(userRepository.loadUser(id).getUser_name());
-        System.out.println(userRepository.loadUser(id).getEmail());
-        System.out.println(userRepository.loadUser(id).getPassword());
+        System.out.println("------------------------------------------------------------");
+        System.out.println("The name: "+userRepository.loadUser(id).getName());
+        System.out.println("The user_name: "+userRepository.loadUser(id).getUser_name());
+        System.out.println("The email: "+userRepository.loadUser(id).getEmail());
+        System.out.println("The password: "+userRepository.loadUser(id).getPassword());
+        System.out.println("------------------------------------------------------------");
     }
     public void update(int id1, int input0, String input1) throws SQLException {
         userRepository.updateUser(id1, input0, input1);

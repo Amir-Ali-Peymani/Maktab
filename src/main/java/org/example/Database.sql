@@ -36,7 +36,8 @@ create table Shareholder
 );
 create table ShareholderBrand
 (
+    id             serial primary key,
     shareholder_id int references Shareholder (id),
-    brand_id       int references Brand (id),
-    primary key (shareholder_id, brand_id)
+    brand_id       int references Brand (id)
 );
+drop table ShareholderBrand;

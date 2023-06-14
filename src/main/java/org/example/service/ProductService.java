@@ -14,10 +14,12 @@ public class ProductService {
         productRepository.saveProduct(product);
     }
     public void load(int id) throws SQLException {
-        System.out.println(productRepository.loadProduct(id).getName());
-        System.out.println(productRepository.loadProduct(id).getCreated_date());
-        System.out.println(productRepository.loadProduct(id).getCategory_id());
-        System.out.println(productRepository.loadProduct(id).getBrand_id());
+        System.out.println("------------------------------------------------------------");
+        System.out.println("The name: "+productRepository.loadProduct(id).getName());
+        System.out.println("The created date: "+productRepository.loadProduct(id).getCreated_date());
+        System.out.println("The category id: "+productRepository.loadProduct(id).getCategory_id());
+        System.out.println("The product id: "+productRepository.loadProduct(id).getBrand_id());
+        System.out.println("------------------------------------------------------------");
     }
     public void update(int id0, int input1, String input2) throws SQLException, ParseException {
         productRepository.updateProduct(id0, input1, input2);
