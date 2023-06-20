@@ -71,17 +71,6 @@ public class UserMain {
         }
         brandService.register(brand_name, website, description);
         System.out.println("Information has been added successfully!!");
-//        String sql = "SELECT id FROM brand WHERE name = ? AND website = ?";
-//        PreparedStatement preparedStatement = connection.prepareStatement(sql);
-//        preparedStatement.setString(1, brand_name);
-//        preparedStatement.setString(2, website);
-//        ResultSet resultSet = preparedStatement.executeQuery();
-//        int brandId = 0;
-//        if (resultSet.next()) {
-//            brandId = resultSet.getInt("id");
-//            System.out.println("User ID: " + brandId);
-//        }
-//        category(brandId);
     }
     private void category() throws SQLException, IOException {
         CategoryService categoryService = new CategoryService();
@@ -102,16 +91,8 @@ public class UserMain {
         }
         categoryService.register(category_name, description);
         System.out.println("the information has been added successfully!!");
-//        String sql = "SELECT id FROM category WHERE name = ?";
-//        PreparedStatement preparedStatement = connection.prepareStatement(sql);
-//        preparedStatement.setString(1, category_name);
-//        ResultSet resultSet = preparedStatement.executeQuery();
-//        int categoryId = 0;
-//        if (resultSet.next()) {
-//            categoryId = resultSet.getInt("id");
-//            System.out.println("User ID: " + categoryId);
-//        }
     }
+
     private void product() throws SQLException, IOException {
         Connection connection = MyConnection.getConnection();
         ProductService productService = new ProductService();
@@ -129,24 +110,29 @@ public class UserMain {
         if (Objects.equals(product_name, Constants.ExitCharacter)) {
             return;
         }
+        System.out.println("if you want to exit press 0");
         System.out.print("year: ");
         year = scanner.nextInt();
-        if (Objects.equals(year, Constants.ExitCharacter)) {
+        if (Objects.equals(year, 0)) {
             return;
         }
         System.out.print("month: ");
         month = scanner.nextInt();
-        if (Objects.equals(month, Constants.ExitCharacter)) {
+        if (Objects.equals(month, 0)) {
             return;
         }
         System.out.print("day: ");
         day = scanner.nextInt();
-        if (Objects.equals(day, Constants.ExitCharacter)) {
+        if (Objects.equals(day, 0)) {
             return;
         }
         Statement statement = connection.createStatement();
         String sql1 = "SELECT * FROM category";
         ResultSet resultSet1 = statement.executeQuery(sql1);
+        if (!resultSet1.next()) {
+            System.out.println("The database is empty.");
+            return;
+        }
         while (resultSet1.next()){
             int id = resultSet1.getInt("id");
             String name = resultSet1.getString("name");
@@ -158,8 +144,15 @@ public class UserMain {
         System.out.println("**************************************************************************");
         System.out.print("which id do you want for category: ");
         id_cat = scanner.nextInt();
+        if (Objects.equals(id_cat, 0)) {
+            return;
+        }
         String sql = "SELECT * FROM brand";
         ResultSet resultSet = statement.executeQuery(sql);
+        if (!resultSet1.next()) {
+            System.out.println("The database is empty.");
+            return;
+        }
         while (resultSet.next()) {
             int id = resultSet.getInt("id");
             String name = resultSet.getString("name");
@@ -170,6 +163,9 @@ public class UserMain {
         }
         System.out.println("which id do you want for brand: ");
         id_br = scanner.nextInt();
+        if (Objects.equals(id_br, 0)) {
+            return;
+        }
         java.sql.Date date = new java.sql.Date(year - 1900, month - 1, day);
         productService.register(product_name, date, id_cat, id_br);
     }
@@ -296,60 +292,60 @@ public class UserMain {
         switch (input){
             case (1) -> {
                 System.out.println("------------------------------------");
-                System.out.println("if you press /c it will exit! ");
+                System.out.println("if you press 0 it will exit! ");
                 System.out.print("please give the id: ");
                 id = scanner.nextInt();
-                if (Objects.equals(id, Constants.ExitCharacter)){
+                if (Objects.equals(id, 0)){
                     return;
                 }
                 brandService.load(id);
             }
             case (2) -> {
                 System.out.println("------------------------------------");
-                System.out.println("if you press /c it will exit! ");
+                System.out.println("if you press 0 it will exit! ");
                 System.out.print("please give the id: ");
                 id = scanner.nextInt();
-                if (Objects.equals(id, Constants.ExitCharacter)){
+                if (Objects.equals(id, 0)){
                     return;
                 }
                 categoryService.load(id);
             }
             case (3) -> {
                 System.out.println("------------------------------------");
-                System.out.println("if you press /c it will exit! ");
+                System.out.println("if you press 0 it will exit! ");
                 System.out.print("please give the id: ");
                 id = scanner.nextInt();
-                if (Objects.equals(id, Constants.ExitCharacter)){
+                if (Objects.equals(id, 0)){
                     return;
                 }
                 productService.load(id);
             }
             case (4) -> {
                 System.out.println("------------------------------------");
-                System.out.println("if you press /c it will exit! ");
+                System.out.println("if you press 0 it will exit! ");
                 System.out.print("please give the id: ");
                 id = scanner.nextInt();
-                if (Objects.equals(id, Constants.ExitCharacter)){
+                if (Objects.equals(id, 0)){
                     return;
                 }
                 shareholderService.load(id);
             }
             case (5) ->{
                 System.out.println("------------------------------------");
-                System.out.println("if you press /c it will exit! ");
+                System.out.println("if you press 0 it will exit! ");
                 System.out.print("please give the id: ");
                 id = scanner.nextInt();
-                if (Objects.equals(id, Constants.ExitCharacter)){
+                if (Objects.equals(id, 0)){
                     return;
                 }
                 shareholderBrandService.load(id);
             }
             case (6) ->{
                 System.out.println("------------------------------------");
-                System.out.println("if you press /c it will exit! ");
+                System.out.println("if you press 0 it will exit! ");
                 System.out.print("please give the id: ");
                 id = scanner.nextInt();
-                if (Objects.equals(id, Constants.ExitCharacter)){
+                if (Objects.equals(id, 0)){
                     return;
                 }
                 userService.load(id);
