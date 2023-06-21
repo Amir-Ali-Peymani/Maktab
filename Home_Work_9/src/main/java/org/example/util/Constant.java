@@ -16,7 +16,8 @@ public class Constant {
     public static final String BREAK="break";
     public static final String WELCOME_MESSAGE="Hi dear ";
     public static final String BAD_ENTRY_FORMAT = "bad entry format!";
-    public static final String  ENTER_CREDENTIAL_DATA = "Enter username and password (split by comma): ";
+    public static final String  ENTER_USERNAME_DATA = "Enter username: ";
+    public static final String ENTER_PASSWORD_DATA = "Enter password: ";
     public static final String ENTER_SIGNUP_INFO="Enter your information: ";
     public static final String USER_EXISTS = "this username is taken by another ";
     public static final String NAT_CODE_EXISTS = "this national code is exists ";
