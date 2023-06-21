@@ -6,6 +6,7 @@ import org.example.util.ApplicationContext;
 import org.example.util.Constant;
 import org.example.util.SecurityContext;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Menu {
@@ -18,9 +19,59 @@ public class Menu {
             Printer.printMsg(Constant.CHOOSE_ITEM, false);
             switch (new Scanner(System.in).next().trim()){
                 case "1":
-
+                    loginMenu();
+                case "2":
+                    signupMenu();
+                case "3":
+                    System.exit(0);
+                    break;
+                default:
+                    Printer.printWarning(Constant.ITEM_NOT_FOUND);
+                    break;
             }
         }
+    }
+    private static void signupMenu() {
+        Scanner scanner=new Scanner(System.in);
+        Printer.printMsg(Constant.ENTER_SIGNUP_INFO, true);
+        Printer.printMsg(Constant.ENTER_FIRST_NAME,false);
+        String name=scanner.next();
+        String username=validateUsername(scanner);
+        String password= validatePassword(scanner);
+        try {
+            userService.save(new User(name,username,password));
+            Printer.printMsg(Constant.REGISTRATION_SUCCESS,true);
+        } catch (SQLException e) {
+            Printer.printWarning(e.getMessage());
+        }
+    }
+
+    private static String validateUsername(Scanner scanner) {
+        String username;
+        while (true){
+            Printer.printMsg(Constant.ENTER_USERNAME,false);
+            username= scanner.next().trim();
+            try {
+                if (!userService.isExistUsername(username))break;
+            } catch (Throwable e) {
+                Printer.printWarning(e.getMessage());
+            }
+        }
+        return username;
+    }
+
+    private static String validatePassword(Scanner scanner){
+        String password;
+        while(true){
+            Printer.printMsg(Constant.ENTER_PASSWORD, false);
+            password = scanner.next();
+            try {
+                if (!userService.isExistPassWord(password)) break;
+            } catch (Throwable e) {
+                Printer.printWarning(e.getMessage());
+            }
+        }
+        return password;
     }
 
     public static void loginMenu(){
@@ -51,7 +102,7 @@ public class Menu {
     }
     private static void dashboardMenu() {
         while (true) {
-            Printer.printMenu(Constant.DASHBOARD_MENU, Constant.WELCOME_MESSAGE + SecurityContext.firstName);
+            Printer.printMenu(Constant.DASHBOARD_MENU, Constant.WELCOME_MESSAGE + SecurityContext.name);
 
             switch (new Scanner(System.in).next().trim()) {
                 case "1":
