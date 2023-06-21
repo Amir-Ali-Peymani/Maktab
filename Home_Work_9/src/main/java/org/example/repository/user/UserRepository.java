@@ -1,4 +1,4 @@
-package org.example.repository;
+package org.example.repository.user;
 
 import org.example.base.repository.BaseRepository;
 import org.example.entity.User;
@@ -14,5 +14,6 @@ public interface UserRepository extends BaseRepository<Integer, User> {
 
     boolean isExistPassWord(String passWord)throws SQLException, PasswordExistException;
 
-    boolean isExistName(String name) throws SQLException, NameExistException;
+
+    User findUserByUsername(String userName) throws SQLException;
 }
