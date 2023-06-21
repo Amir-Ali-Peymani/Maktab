@@ -92,7 +92,6 @@ public class UserMain {
         categoryService.register(category_name, description);
         System.out.println("the information has been added successfully!!");
     }
-
     private void product() throws SQLException, IOException {
         Connection connection = MyConnection.getConnection();
         ProductService productService = new ProductService();
