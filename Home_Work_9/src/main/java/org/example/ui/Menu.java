@@ -21,6 +21,7 @@ public class Menu {
             switch (new Scanner(System.in).next().trim()){
                 case "1":
                     loginMenu();
+                    break;
                 case "2":
                     signupMenu();
                     break;
@@ -81,6 +82,7 @@ public class Menu {
     public static void loginMenu(){
         String username;
         String passWord;
+        boolean condition = true;
         while (true){
             Printer.printMsg(Constant.ENTER_USERNAME, false);
             username = new Scanner(System.in).next();
@@ -95,13 +97,13 @@ public class Menu {
                 User resultSet = userService.checkCredentialInfoForLogin(credential[0], credential[1]);
                 setSecurityContext(resultSet);
 //                dashboardMenu();
-                return;
             }catch (ArrayIndexOutOfBoundsException e){
                 Printer.printWarning(Constant.BAD_ENTRY_FORMAT);
             }
             catch (Throwable e){
                 Printer.printWarning(e.getClass().getSimpleName() + ": " + e.getMessage());
             }
+            break;
         }
     }
 
