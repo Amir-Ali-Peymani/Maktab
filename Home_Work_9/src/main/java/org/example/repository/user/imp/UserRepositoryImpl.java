@@ -3,9 +3,8 @@ package org.example.repository.user.imp;
 import org.example.base.repository.impl.BaseRepositoryImpl;
 import org.example.config.MyConnection;
 import org.example.entity.User;
-import org.example.exception.users.NameExistException;
-import org.example.exception.users.PasswordExistException;
-import org.example.exception.users.UsernameExistException;
+import org.example.exception.PasswordExistException;
+import org.example.exception.UsernameExistException;
 import org.example.repository.user.UserRepository;
 import org.example.util.Constant;
 
@@ -54,7 +53,7 @@ public class UserRepositoryImpl
 
     @Override
     public boolean isExistUsername(String userName) throws SQLException, UsernameExistException {
-        String sql = "SELECT username FROM " + getTableName() + "WHERE username = ?";
+        String sql = "SELECT username FROM " + getTableName() + " WHERE username = ?";
         try (PreparedStatement preparedStatement = new MyConnection().getConnection().prepareStatement(sql)){
             preparedStatement.setString(1, userName);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -66,7 +65,7 @@ public class UserRepositoryImpl
 
     @Override
     public boolean isExistPassWord(String passWord) throws SQLException, PasswordExistException {
-        String sql = "SELECT password FROM " + getTableName() + "WHERE password = ? ";
+        String sql = "SELECT password FROM " + getTableName() + " WHERE password = ? ";
         try(PreparedStatement preparedStatement = new MyConnection().getConnection().prepareStatement(sql)){
             preparedStatement.setString(1, passWord);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -77,7 +76,7 @@ public class UserRepositoryImpl
     }
 
     public User findUserByUsername(String userName) throws SQLException{
-        String sql = "SELECT * FROM "+ getTableName() + "WHERE username = ? ";
+        String sql = "SELECT * FROM "+ getTableName() + " WHERE username = ? ";
         try(PreparedStatement preparedStatement = new MyConnection().getConnection().prepareStatement(sql)){
             preparedStatement.setString(1, userName);
             ResultSet resultSet = preparedStatement.executeQuery();

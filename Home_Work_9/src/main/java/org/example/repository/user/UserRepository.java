@@ -2,9 +2,8 @@ package org.example.repository.user;
 
 import org.example.base.repository.BaseRepository;
 import org.example.entity.User;
-import org.example.exception.users.NameExistException;
-import org.example.exception.users.PasswordExistException;
-import org.example.exception.users.UsernameExistException;
+import org.example.exception.PasswordExistException;
+import org.example.exception.UsernameExistException;
 
 import java.sql.SQLException;
 

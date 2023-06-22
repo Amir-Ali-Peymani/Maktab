@@ -1,4 +1,4 @@
-package org.example.exception.users;
+package org.example.exception;
 
 public class PasswordExistException extends Exception {
 

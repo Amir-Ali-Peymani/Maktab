@@ -3,7 +3,6 @@ package org.example.ui;
 public class Printer{
 
     public static void printMenu(String[] items, String topic){
-        System.out.println("**********" + topic + "**********");
         for (int i = 0; i< items.length; i++){
             System.out.println((i + 1) + " " + items[i]);
         }

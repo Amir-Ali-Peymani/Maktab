@@ -1,5 +1,6 @@
 package org.example.ui;
 
+import org.example.base.repository.BaseRepository;
 import org.example.entity.User;
 import org.example.service.user.UserService;
 import org.example.util.ApplicationContext;
@@ -22,6 +23,7 @@ public class Menu {
                     loginMenu();
                 case "2":
                     signupMenu();
+                    break;
                 case "3":
                     System.exit(0);
                     break;
@@ -50,9 +52,11 @@ public class Menu {
         String username;
         while (true){
             Printer.printMsg(Constant.ENTER_USERNAME,false);
-            username= scanner.next().trim();
+            username= scanner.next();
             try {
-                if (!userService.isExistUsername(username))break;
+                if (!userService.isExistUsername(username)){
+                    break;
+                }
             } catch (Throwable e) {
                 Printer.printWarning(e.getMessage());
             }
@@ -90,8 +94,8 @@ public class Menu {
             try {
                 User resultSet = userService.checkCredentialInfoForLogin(credential[0], credential[1]);
                 setSecurityContext(resultSet);
-                dashboardMenu();
-
+//                dashboardMenu();
+                return;
             }catch (ArrayIndexOutOfBoundsException e){
                 Printer.printWarning(Constant.BAD_ENTRY_FORMAT);
             }
@@ -100,46 +104,7 @@ public class Menu {
             }
         }
     }
-    private static void dashboardMenu() {
-        while (true) {
-            Printer.printMenu(Constant.DASHBOARD_MENU, Constant.WELCOME_MESSAGE + SecurityContext.name);
 
-            switch (new Scanner(System.in).next().trim()) {
-                case "1":
-                    showProfile();
-                    break;
-                case "2":
-                    updateProfile();
-                    break;
-                case "3":
-                    deleteAccount();
-                    break;
-                case "4":
-                    clearSecurityContext();
-                    run();
-                    break;
-                default:
-                    Printer.printWarning(Constant.ITEM_NOT_FOUND);
-                    break;
-            }
-        }
-    }
-
-    private static void deleteAccount() {
-    }
-
-    private static void updateProfile() {
-    }
-
-    private static void showProfile() {
-    }
-    private static void clearSecurityContext() {
-        SecurityContext.id = -1;
-        SecurityContext.name = null;
-        SecurityContext.username = null;
-        SecurityContext.passWord = null;
-
-    }
     private static void setSecurityContext(User resultSet) {
         SecurityContext.id = resultSet.getId();
         SecurityContext.name = resultSet.getName();

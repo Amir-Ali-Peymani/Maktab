@@ -3,8 +3,7 @@ package org.example.service.user;
 
 import org.example.base.service.BaseService;
 import org.example.entity.User;
-import org.example.exception.users.PasswordExistException;
-import org.example.exception.users.UsernameExistException;
+import org.example.exception.PasswordExistException;
 
 import java.sql.SQLException;
 

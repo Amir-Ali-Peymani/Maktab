@@ -13,7 +13,7 @@ public abstract class BaseRepositoryImpl <ID extends Serializable, TYPE extends 
         implements BaseRepository <ID, TYPE> {
     @Override
     public void save(TYPE entity) throws SQLException {
-        String sql = "INSERT INTO" + getTableName() + " " + getColumnsName() + "VALUES ( " + getCountOfQuestionMarks() + ") ";
+        String sql = "INSERT INTO " + getTableName() + " " + getColumnsName() + " VALUES ( " + getCountOfQuestionMarks() + ") ";
         try (PreparedStatement statement = new MyConnection().getConnection().prepareStatement(sql)){
             fillParamForStatement(statement, entity);
             statement.executeUpdate();
