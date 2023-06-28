@@ -15,7 +15,7 @@ public class Question3 {
         list.add(6);
         list.add(7);
         list.add(9);
-        list.add(10);
+//        list.add(10);
         getValue(list);
     }
     private static void getValue(ArrayList<Integer> list01){
@@ -50,8 +50,17 @@ public class Question3 {
                 appropriate.add(list01.get(i+1));
             }
         }
+        System.out.println("-----------------------------------------------------------------");
         System.out.println(list01);
-        System.out.println(inAppropriate);
-        System.out.println(appropriate);
+        System.out.println("inappropriate: "+inAppropriate);
+        System.out.println("appropriate: "+appropriate);
+        list01.clear();
+        list01.addAll(appropriate);
+        System.out.println("after edition: "+list01);
+        System.out.println("THE LIST:");
+        for (int i = 0; i < list01.size() - 1; i+=2) {
+            System.out.print("{"+list01.get(i)+", "+list01.get(i+1)+"} ");
+        }
+
     }
 }
