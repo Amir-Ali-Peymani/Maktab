@@ -38,6 +38,9 @@ public class Question1_A {
     }
 
     private static void partB(TreeSet<Character> set01,  TreeSet<Character> set02) {
-
+        TreeSet<Character> sum = new TreeSet<>();
+        sum.addAll(set01);
+        sum.addAll(set02);
+        System.out.println("Sum: " + sum);
     }
 }
