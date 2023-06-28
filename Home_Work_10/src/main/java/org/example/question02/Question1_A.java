@@ -11,6 +11,7 @@ public class Question1_A {
         TreeSet<Character> set2 = new TreeSet<>();
         partA(set1,  set2);
         partB(set1,  set2);
+        partC(set1,  set2);
     }
     private static void partA(TreeSet<Character> set1, TreeSet<Character> set2) {
         Random random = new Random();
@@ -18,19 +19,17 @@ public class Question1_A {
         for (char c = 'a'; c <= 'z'; c++) {
             list.add(c);
         }
-
         while (set1.size() < 10) {
             int randomIndex = random.nextInt(list.size());
             char randomChar = list.get(randomIndex);
             set1.add(randomChar);
-            list.remove(randomIndex);
         }
+
 
         while (set2.size() < 10) {
             int randomIndex = random.nextInt(list.size());
             char randomChar = list.get(randomIndex);
             set2.add(randomChar);
-            list.remove(randomIndex);
         }
 
         System.out.println("Set 1: " + set1);
@@ -42,5 +41,11 @@ public class Question1_A {
         sum.addAll(set01);
         sum.addAll(set02);
         System.out.println("Sum: " + sum);
+    }
+
+    private static void partC(TreeSet<Character> set01,  TreeSet<Character> set02) {
+        TreeSet<Character> common = new TreeSet<>(set01);
+        common.retainAll(set02);
+        System.out.println("Common: " + common);
     }
 }
