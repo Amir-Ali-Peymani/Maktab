@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Question1_B {
-    public static void main(String[] args) {
+    public static void start() {
         HashMap <Character,  Integer> input01 = new HashMap<>();
         HashMap <Character,  Integer> input02 = new HashMap<>();
         String[] input = getInput();
@@ -21,11 +21,17 @@ public class Question1_B {
     }
 
     private static void checking(HashMap<Character, Integer> input1, HashMap<Character, Integer> input02) {
-        for (char key : input1.keySet()) {
-            if(! input02.containsKey(key)) {
-                System.out.println("FAIL");
-            }else {
-                System.out.println("PASS");
+        if (input1.size()!= input02.size()) {
+            System.out.println("FAIL");
+            return;
+        } else {
+            for (char key : input1.keySet()) {
+                if (!input02.containsKey(key)) {
+                    System.out.println("FAIL");
+                } else {
+                    System.out.println("PASS");
+                    return;
+                }
             }
         }
     }
@@ -33,9 +39,9 @@ public class Question1_B {
     private static String[] getInput() {
         Scanner scanner = new Scanner(System.in);
         String[] input01 = new String[2];
-        System.out.println("value 1: ");
+        System.out.print("value 1: ");
         String input1 = scanner.nextLine();
-        System.out.println("value 2: ");
+        System.out.print("value 2: ");
         String input2 = scanner.nextLine();
         input01[0] = input1;
         input01[1] = input2;
