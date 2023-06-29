@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bf8ed41-27a1-4d09-bc3b-cf62ac5ecfae" name="Changes" comment="package and class for Q1">
+    <list default="true" id="5bf8ed41-27a1-4d09-bc3b-cf62ac5ecfae" name="Changes" comment="regex for char a-z">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/question01/Question1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/question01/Question1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/question04/MyHashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/question04/MyHashMap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,24 +39,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Home__Work__10&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/javas_shit/Hello_world&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Home__Work__10",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/aghy_afshar/console_library",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Application.Question1">
+}]]></component>
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="Home_Work_9" />
@@ -66,8 +73,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Question1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.question01.Question1" />
+    <configuration name="Question1_B" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.question01.Question1_B" />
       <module name="Home_Work_9" />
       <extension name="coverage">
         <pattern>
@@ -79,10 +86,52 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Question2_A" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.question02.Question2_A" />
+      <module name="Home_Work_9" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.question02.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Question3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.question03.Question3" />
+      <module name="Home_Work_9" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.question03.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.question04.Test" />
+      <module name="Home_Work_9" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.question04.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Question1" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Question3" />
+        <item itemvalue="Application.Question2_A" />
+        <item itemvalue="Application.Question1_B" />
       </list>
     </recent_temporary>
   </component>
@@ -98,7 +147,18 @@
       <workItem from="1687941336341" duration="131000" />
       <workItem from="1687941488312" duration="146000" />
       <workItem from="1687941653579" duration="2765000" />
-      <workItem from="1687944709288" duration="962000" />
+      <workItem from="1687944709288" duration="1064000" />
+      <workItem from="1687945821368" duration="797000" />
+      <workItem from="1687946715622" duration="202000" />
+      <workItem from="1687946933658" duration="287000" />
+      <workItem from="1687947240434" duration="398000" />
+      <workItem from="1687947796563" duration="825000" />
+      <workItem from="1687967028776" duration="100000" />
+      <workItem from="1687967149160" duration="37000" />
+      <workItem from="1687968382542" duration="700000" />
+      <workItem from="1687969285485" duration="120000" />
+      <workItem from="1687969660579" duration="1209000" />
+      <workItem from="1687976352507" duration="33203000" />
     </task>
     <task id="LOCAL-00001" summary="package and class for Q1">
       <option name="closed" value="true" />
@@ -108,7 +168,191 @@
       <option name="project" value="LOCAL" />
       <updated>1687898692935</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="body of the Q1 class">
+      <option name="closed" value="true" />
+      <created>1687945694101</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687945694101</updated>
+    </task>
+    <task id="LOCAL-00003" summary="made the jdk 20 -&gt; 17">
+      <option name="closed" value="true" />
+      <created>1687981841397</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687981841397</updated>
+    </task>
+    <task id="LOCAL-00004" summary="public class name Question1 -&gt; Question1_A">
+      <option name="closed" value="true" />
+      <created>1687982011189</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687982011189</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Question 2 part A + B complete">
+      <option name="closed" value="true" />
+      <created>1687982058605</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1687982058605</updated>
+    </task>
+    <task id="LOCAL-00006" summary="taking input from user">
+      <option name="closed" value="true" />
+      <created>1687982142656</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1687982142656</updated>
+    </task>
+    <task id="LOCAL-00007" summary="created partB of sum to TreeSet">
+      <option name="closed" value="true" />
+      <created>1687982384777</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1687982384777</updated>
+    </task>
+    <task id="LOCAL-00008" summary="created partC the common thing and then edit the partA">
+      <option name="closed" value="true" />
+      <created>1687983495572</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1687983495572</updated>
+    </task>
+    <task id="LOCAL-00009" summary="created Q3 separate the appropriate from inAppropriate int the given list to the method">
+      <option name="closed" value="true" />
+      <created>1687993623478</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1687993623478</updated>
+    </task>
+    <task id="LOCAL-00010" summary="change of public class name">
+      <option name="closed" value="true" />
+      <created>1687994869919</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1687994869919</updated>
+    </task>
+    <task id="LOCAL-00011" summary="making some test for programme and add:&#10;appropriate and inappropriate ArrayList and the ones that get candidates">
+      <option name="closed" value="true" />
+      <created>1687994958605</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1687994958605</updated>
+    </task>
+    <task id="LOCAL-00012" summary="creat Exception for exception handling">
+      <option name="closed" value="true" />
+      <created>1688003336953</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1688003336953</updated>
+    </task>
+    <task id="LOCAL-00013" summary="testing questions my calling them in main">
+      <option name="closed" value="true" />
+      <created>1688003363942</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1688003363942</updated>
+    </task>
+    <task id="LOCAL-00014" summary="change for Main to get called">
+      <option name="closed" value="true" />
+      <created>1688003395477</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1688003395477</updated>
+    </task>
+    <task id="LOCAL-00015" summary="change for Main to get called">
+      <option name="closed" value="true" />
+      <created>1688003403177</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1688003403177</updated>
+    </task>
+    <task id="LOCAL-00016" summary="change for Main to get called">
+      <option name="closed" value="true" />
+      <created>1688003413080</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1688003413080</updated>
+    </task>
+    <task id="LOCAL-00017" summary="change for Main to get called">
+      <option name="closed" value="true" />
+      <created>1688003426718</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1688003426718</updated>
+    </task>
+    <task id="LOCAL-00018" summary="create HashMap Q4">
+      <option name="closed" value="true" />
+      <created>1688010285376</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1688010285376</updated>
+    </task>
+    <task id="LOCAL-00019" summary="added methods and check different values for making sure">
+      <option name="closed" value="true" />
+      <created>1688010321839</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1688010321839</updated>
+    </task>
+    <task id="LOCAL-00020" summary="create body exception">
+      <option name="closed" value="true" />
+      <created>1688014109978</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1688014109978</updated>
+    </task>
+    <task id="LOCAL-00021" summary="testing main">
+      <option name="closed" value="true" />
+      <created>1688014140469</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1688014140469</updated>
+    </task>
+    <task id="LOCAL-00022" summary="create exception for Question1_A">
+      <option name="closed" value="true" />
+      <created>1688014167167</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1688014167167</updated>
+    </task>
+    <task id="LOCAL-00023" summary="create exception for Question1_B">
+      <option name="closed" value="true" />
+      <created>1688014176863</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1688014176863</updated>
+    </task>
+    <task id="LOCAL-00024" summary="regex for char a-z">
+      <option name="closed" value="true" />
+      <created>1688014193636</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1688014193636</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +360,47 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="package and class for Q1" />
-    <option name="LAST_COMMIT_MESSAGE" value="package and class for Q1" />
+    <MESSAGE value="body of the Q1 class" />
+    <MESSAGE value="made the jdk 20 -&gt; 17" />
+    <MESSAGE value="public class name Question1 -&gt; Question1_A" />
+    <MESSAGE value="Question 2 part A + B complete" />
+    <MESSAGE value="taking input from user" />
+    <MESSAGE value="created partB of sum to TreeSet" />
+    <MESSAGE value="created partC the common thing and then edit the partA" />
+    <MESSAGE value="created Q3 separate the appropriate from inAppropriate int the given list to the method" />
+    <MESSAGE value="change of public class name" />
+    <MESSAGE value="making some test for programme and add:&#10;appropriate and inappropriate ArrayList and the ones that get candidates" />
+    <MESSAGE value="creat Exception for exception handling" />
+    <MESSAGE value="testing questions my calling them in main" />
+    <MESSAGE value="change for Main to get called" />
+    <MESSAGE value="create HashMap Q4" />
+    <MESSAGE value="added methods and check different values for making sure" />
+    <MESSAGE value="create body exception" />
+    <MESSAGE value="testing main" />
+    <MESSAGE value="create exception for Question1_A" />
+    <MESSAGE value="create exception for Question1_B" />
+    <MESSAGE value="regex for char a-z" />
+    <option name="LAST_COMMIT_MESSAGE" value="regex for char a-z" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
