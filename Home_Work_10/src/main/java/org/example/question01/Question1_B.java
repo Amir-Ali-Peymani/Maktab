@@ -1,5 +1,7 @@
 package org.example.question01;
 
+import org.example.exception.CustomException;
+
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -37,12 +39,10 @@ public class Question1_B {
     }
 
     private static String[] getInput() {
-        Scanner scanner = new Scanner(System.in);
+        CustomException customException = new CustomException();
         String[] input01 = new String[2];
-        System.out.print("value 1: ");
-        String input1 = scanner.nextLine();
-        System.out.print("value 2: ");
-        String input2 = scanner.nextLine();
+        String input1 = customException.giveInput("value 1 ");
+        String input2 = customException.giveInput("value 2 ");
         input01[0] = input1;
         input01[1] = input2;
         return input01;
