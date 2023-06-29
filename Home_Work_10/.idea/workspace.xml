@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bf8ed41-27a1-4d09-bc3b-cf62ac5ecfae" name="Changes" comment="regex for char a-z">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/question04/MyHashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/question04/MyHashMap.java" afterDir="false" />
-    </list>
+    <list default="true" id="5bf8ed41-27a1-4d09-bc3b-cf62ac5ecfae" name="Changes" comment="end" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +45,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -59,6 +53,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install" />
+    </option>
+  </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
@@ -158,7 +157,7 @@
       <workItem from="1687968382542" duration="700000" />
       <workItem from="1687969285485" duration="120000" />
       <workItem from="1687969660579" duration="1209000" />
-      <workItem from="1687976352507" duration="33203000" />
+      <workItem from="1687976352507" duration="34446000" />
     </task>
     <task id="LOCAL-00001" summary="package and class for Q1">
       <option name="closed" value="true" />
@@ -352,7 +351,39 @@
       <option name="project" value="LOCAL" />
       <updated>1688014193636</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="making main ready">
+      <option name="closed" value="true" />
+      <created>1688016202405</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1688016202405</updated>
+    </task>
+    <task id="LOCAL-00026" summary="rename modify to change">
+      <option name="closed" value="true" />
+      <created>1688016220769</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1688016220769</updated>
+    </task>
+    <task id="LOCAL-00027" summary="end">
+      <option name="closed" value="true" />
+      <created>1688017106709</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1688017106709</updated>
+    </task>
+    <task id="LOCAL-00028" summary="end">
+      <option name="closed" value="true" />
+      <created>1688017114669</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1688017114669</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,27 +411,9 @@
     <MESSAGE value="create exception for Question1_A" />
     <MESSAGE value="create exception for Question1_B" />
     <MESSAGE value="regex for char a-z" />
-    <option name="LAST_COMMIT_MESSAGE" value="regex for char a-z" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="making main ready" />
+    <MESSAGE value="rename modify to change" />
+    <MESSAGE value="end" />
+    <option name="LAST_COMMIT_MESSAGE" value="end" />
   </component>
 </project>
