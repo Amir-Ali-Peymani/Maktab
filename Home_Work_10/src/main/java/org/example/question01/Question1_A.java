@@ -4,10 +4,8 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Question1_A {
-    public static void start() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("input: ");
-        String string = scanner.nextLine();
+    public static void start(String string1) {
+        String string = string1;
         generate2("", string);
     }
 
