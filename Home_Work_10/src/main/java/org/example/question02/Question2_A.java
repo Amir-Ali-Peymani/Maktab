@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.TreeSet;
 
 public class Question2_A {
-    public static void main(String[] args) {
+    public static void start() {
         TreeSet<Character> set1 = new TreeSet<>();
         TreeSet<Character> set2 = new TreeSet<>();
         partA(set1,  set2);
