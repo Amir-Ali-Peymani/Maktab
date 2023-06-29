@@ -65,7 +65,7 @@ public class MyHashMap<K, V>{
         System.out.println(" }");
     }
 
-    public void modify(K key, V value){
+    public void change(K key, V value){
         if (keys.size() == 0 && values.size() == 0) {
             System.out.println("empty");
         } else {
@@ -77,6 +77,5 @@ public class MyHashMap<K, V>{
             System.out.println("it got modify!!");
         }
     }
-
 
 }
