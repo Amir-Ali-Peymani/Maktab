@@ -123,7 +123,6 @@ public class LambdaUtil {
      */
     public static Supplier<IntUnaryOperator> nMultiplyFunctionSupplier(int n) {
         //todo
-//        return () -> num -> num * n;
         return () -> (x) -> n * x;
     }
 
@@ -158,13 +157,7 @@ public class LambdaUtil {
      */
     public static BiFunction<IntUnaryOperator, IntPredicate, IntUnaryOperator> functionToConditionalFunction() {
         //todo :: extra points
-        return (operator, predicate) -> num -> {
-            if (predicate.test(num)) {
-                return operator.applyAsInt(num);
-            } else {
-                return num;
-            }
-        };
+        return (operator, predicate) -> num -> predicate.test(num) ? operator.applyAsInt(num) : num;
     }
 
     /**
