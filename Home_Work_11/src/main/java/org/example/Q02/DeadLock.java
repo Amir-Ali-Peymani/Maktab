@@ -10,7 +10,10 @@ public class DeadLock {
                 synchronized (block01) {
                     System.out.println("Thread 1: locked block 1");
 
-                    try { Thread.sleep(100);} catch (Exception e) {}
+                    try {
+                        Thread.sleep(100);
+                    } catch (Exception e) {
+                    }
 
                     synchronized (block02) {
                         System.out.println("Thread 1: locked block 2");
@@ -24,7 +27,10 @@ public class DeadLock {
                 synchronized (block02) {
                     System.out.println("Thread 2: locked block 2");
 
-                    try { Thread.sleep(100);} catch (Exception e) {}
+                    try {
+                        Thread.sleep(100);
+                    } catch (Exception e) {
+                    }
 
                     synchronized (block01) {
                         System.out.println("Thread 2: locked block 1");
@@ -32,7 +38,6 @@ public class DeadLock {
                 }
             }
         };
-
 
         t1.start();
         t2.start();
