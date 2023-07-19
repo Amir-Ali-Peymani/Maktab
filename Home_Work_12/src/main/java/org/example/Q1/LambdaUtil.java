@@ -5,8 +5,8 @@ import java.util.Map;
 import java.util.Random;
 import java.util.function.*;
 
-
 public class LambdaUtil {
+    static Random random = new Random();
 
     /**
      * Returns {@link Supplier} that always supply "Hello"
@@ -60,7 +60,7 @@ public class LambdaUtil {
      */
     public static Predicate<String> lengthInRangePredicate(int min, int max) {
         //todo
-        return str -> str.length() >= min && str.length() < max;
+        return word -> word.length() >= min && word.length() < max;
     }
 
     /**
@@ -70,7 +70,6 @@ public class LambdaUtil {
      */
     public static IntSupplier randomIntSupplier() {
         //todo
-        Random random = new Random();
         return random::nextInt;
     }
 
@@ -82,7 +81,6 @@ public class LambdaUtil {
      */
     public static IntUnaryOperator boundedRandomIntSupplier() {
         //todo
-        Random random = new Random();
         return random::nextInt;
     }
 
@@ -93,7 +91,7 @@ public class LambdaUtil {
      */
     public static IntUnaryOperator intSquareOperation() {
         //todo
-        return operand -> operand * operand;
+        return side -> side * side;
     }
 
     /**
@@ -125,7 +123,8 @@ public class LambdaUtil {
      */
     public static Supplier<IntUnaryOperator> nMultiplyFunctionSupplier(int n) {
         //todo
-        return () -> num -> num * n;
+//        return () -> num -> num * n;
+        return () -> (x) -> n * x;
     }
 
     /**
@@ -135,7 +134,7 @@ public class LambdaUtil {
      */
     public static Supplier<Supplier<Supplier<String>>> trickyWellDoneSupplier() {
         //todo
-        return () -> () -> () -> "DONE";
+        return () -> () -> () -> "WELL DONE!";
     }
 
     /**
