@@ -1,4 +1,4 @@
-package ir.maktab.model;
+package ir.maktab.Q1.model;
 
 import lombok.Getter;
 import lombok.Setter;
