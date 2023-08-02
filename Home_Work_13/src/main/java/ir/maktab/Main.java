@@ -7,6 +7,7 @@ import ir.maktab.model.Person;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -20,12 +21,14 @@ public class Main {
         List<Person> filteredOrderingPeopleList = orderingByAgeByLastName(peopleList);
 
 //        maping(peopleList);
+        Map<String, String> result = filterAndMapPerson(peopleList);
+
 
     }
 
     public static List<Person> filterAge(List<Person> people) {
         List<Person> overfifty = people.stream()
-                .filter(person -> person.getAge() >50)
+                .filter(person -> person.getAge() > 50)
                 .collect(Collectors.toList());
         return overfifty;
     }
@@ -51,4 +54,17 @@ public class Main {
                 .collect(Collectors.toList());
         System.out.println(ipv4);
     }
+
+    public static Map<String, String> filterAndMapPerson(List<Person> people) {
+        return people.stream()
+                .sorted(Comparator.comparing(Person::getLastName))
+                .filter(person -> person.getGender().equals("Female") && person.getAge() > 40)
+                .dropWhile(person -> person.getFirstName().startsWith("a"))
+                .limit(100)
+                .collect(Collectors.toMap(
+                        Person::getFirstName,
+                        Person::getLastName,
+                        (existingValue, newValue) -> (String) existingValue));
+    }
+
 }
