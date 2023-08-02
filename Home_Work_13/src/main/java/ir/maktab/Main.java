@@ -4,7 +4,7 @@ package ir.maktab;
 import ir.maktab.mockdata.MockData;
 import ir.maktab.model.Person;
 
-import java.util.ArrayList;
+
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,6 +16,11 @@ public class Main {
         List<Person> filteredPeopleList = filterAge(peopleList);
 
         List<Person> orderingPeopleList = orderByUsername(peopleList);
+
+        List<Person> filteredOrderingPeopleList = orderingByAgeByLastName(peopleList);
+
+//        maping(peopleList);
+
     }
 
     public static List<Person> filterAge(List<Person> people) {
@@ -33,8 +38,17 @@ public class Main {
     }
 
     public static List<Person> orderingByAgeByLastName(List<Person> people) {
+        List<Person> sortedList = people.stream()
+                .sorted(Comparator.comparing(Person::getAge)
+                        .thenComparing(Person::getLastName))
+                .toList();
+        return sortedList;
+    }
 
-
-        return null;
+    public static void maping(List<Person> people) {
+        List<String> ipv4 = people.stream()
+                .map(Person::getIpv4)
+                .collect(Collectors.toList());
+        System.out.println(ipv4);
     }
 }
