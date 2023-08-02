@@ -1,9 +1,9 @@
-package ir.maktab.mockdata;
+package ir.maktab.Q1.mockdata;
 
 import com.google.common.io.Resources;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import ir.maktab.model.Person;
+import ir.maktab.Q1.model.Person;
 import org.apache.commons.io.IOUtils;
 
 import java.io.IOException;

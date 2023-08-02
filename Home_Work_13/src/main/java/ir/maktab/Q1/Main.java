@@ -1,9 +1,9 @@
-package ir.maktab;
+package ir.maktab.Q1;
 
 
-import ir.maktab.mockdata.MockData;
-import ir.maktab.model.Person;
-import ir.maktab.model.PersonSummary;
+import ir.maktab.Q1.mockdata.MockData;
+import ir.maktab.Q1.model.Person;
+import ir.maktab.Q1.model.PersonSummary;
 
 
 import java.time.LocalDate;
