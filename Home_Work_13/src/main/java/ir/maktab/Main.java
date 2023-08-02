@@ -27,7 +27,8 @@ public class Main {
         Map<String, String> result = filterAndMapPerson(peopleList);
 
         List<PersonSummary> correctingDate = convertAndCorrectBirthDates(peopleList);
-        System.out.println(correctingDate);
+
+        System.out.println(getAverageAge(peopleList));
 
     }
 
@@ -82,6 +83,7 @@ public class Main {
         ))
                 .collect(Collectors.toList());
     }
+
     private static String formatBirthDate(Integer age) {
         if (age <= 0){
             return "";
@@ -90,5 +92,13 @@ public class Main {
             LocalDate birthDate = currentDate.minusYears(age);
             return birthDate.format(DateTimeFormatter.ISO_DATE);
         }
+    }
+
+    private static double getAverageAge(List<Person> people) {
+        return people.stream()
+                .filter(person -> "male".equalsIgnoreCase(person.getGender()))
+                .mapToInt(Person::getAge)
+                .average()
+                .orElse(0.0);
     }
 }
