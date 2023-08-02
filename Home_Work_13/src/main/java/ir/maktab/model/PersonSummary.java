@@ -16,6 +16,13 @@ public class PersonSummary {
     private String firstName;
     private String lastName;
     private Integer age;
-    private Date birthDate;
+    private String birthDate;
 
+    public PersonSummary(Integer id, String firstName, String lastName, Integer age, String birthDate) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.birthDate = birthDate;
+    }
 }
