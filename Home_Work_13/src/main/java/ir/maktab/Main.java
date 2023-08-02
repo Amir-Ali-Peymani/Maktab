@@ -3,8 +3,11 @@ package ir.maktab;
 
 import ir.maktab.mockdata.MockData;
 import ir.maktab.model.Person;
+import ir.maktab.model.PersonSummary;
 
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -23,6 +26,8 @@ public class Main {
 //        maping(peopleList);
         Map<String, String> result = filterAndMapPerson(peopleList);
 
+        List<PersonSummary> correctingDate = convertAndCorrectBirthDates(peopleList);
+        System.out.println(correctingDate);
 
     }
 
@@ -67,4 +72,23 @@ public class Main {
                         (existingValue, newValue) -> (String) existingValue));
     }
 
+    public static List<PersonSummary> convertAndCorrectBirthDates(List<Person> people) {
+        return people.stream().map(person -> new PersonSummary(
+                person.getId(),
+                person.getFirstName(),
+                person.getLastName(),
+                person.getAge(),
+                formatBirthDate(person.getAge())
+        ))
+                .collect(Collectors.toList());
+    }
+    private static String formatBirthDate(Integer age) {
+        if (age <= 0){
+            return "";
+        } else {
+            LocalDate currentDate = LocalDate.now();
+            LocalDate birthDate = currentDate.minusYears(age);
+            return birthDate.format(DateTimeFormatter.ISO_DATE);
+        }
+    }
 }
