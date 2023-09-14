@@ -12,6 +12,7 @@ import java.util.List;
 @Setter
 @Getter
 @ToString
+//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Entity
 public class Person {
     @Id
