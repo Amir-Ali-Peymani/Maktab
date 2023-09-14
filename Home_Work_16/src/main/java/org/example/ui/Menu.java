@@ -3,9 +3,11 @@ package org.example.ui;
 import org.example.base.BaseRepository;
 import org.example.business.StudentBusiness;
 import org.example.business.StudentProfileBusiness;
+import org.example.entity.StudentProfile;
 import org.example.util.Constant;
 
 import java.time.LocalDate;
+import java.util.List;
 
 
 public class Menu extends BaseRepository {
@@ -71,6 +73,26 @@ public class Menu extends BaseRepository {
 
     }
 
+
+    public static void signIn(){
+        String userName;
+        String password;
+        System.out.print(Constant.USER_NAME);
+        userName = scanner.next();
+        System.out.println(Constant.PASSWORD);
+        password = scanner.next();
+        List<StudentProfile> studentProfile = StudentProfileBusiness.getAllStudentProfiles();
+
+        for (StudentProfile profile : studentProfile){
+            if (profile.getUserName().equals(userName) && profile.getPassword().equals(password)){
+                System.out.println("Sign in Successfully! ");
+            }
+            else {
+                System.out.println("Sign in Failure");
+            }
+        }
+
+    }
 }
 
 
