@@ -5,6 +5,7 @@ import org.example.business.StudentBusiness;
 import org.example.business.StudentProfileBusiness;
 import org.example.entity.StudentProfile;
 import org.example.util.Constant;
+import org.hibernate.event.spi.SaveOrUpdateEvent;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -12,7 +13,8 @@ import java.util.List;
 
 public class Menu extends BaseRepository {
     public static void main(String[] args) {
-        menu();
+        loansMenu();
+//        menu();
 //        signUp();
     }
 
@@ -95,7 +97,21 @@ public class Menu extends BaseRepository {
     }
 
     public static void loansMenu(){
-
+        boolean loop = true;
+        while (loop){
+            Printer.printMenu(Constant.LOANS_MENU);
+            int choice = inputUtility.giveIntegerInput(Constant.CHOICE);
+            switch(choice){
+                case 1:
+                    System.out.println("tuition loan");
+                case 2:
+                    System.out.println("education loan");
+                case 3:
+                    System.out.println("housing deposit loan");
+                case 4:
+                    loop = false;
+            }
+        }
     }
 }
 
