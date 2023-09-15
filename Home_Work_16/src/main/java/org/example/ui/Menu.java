@@ -13,8 +13,8 @@ import java.util.List;
 
 public class Menu extends BaseRepository {
     public static void main(String[] args) {
-        loansMenu();
-//        menu();
+//        loansMenu();
+        menu();
 //        signUp();
     }
 
@@ -23,14 +23,10 @@ public class Menu extends BaseRepository {
         while (loop){
             Printer.printMenu(Constant.MAIN_MENU);
             int choice = inputUtility.giveIntegerInput(Constant.CHOICE);
-            if (choice == 1){
-                signUp();
-            }
-            if (choice == 2){
-                signIn();
-            }
-            if (choice == 3){
-                loop = false;
+            switch (choice){
+                case 1 -> signUp();
+                case 2 -> signIn();
+                case 3 -> loop = false;
             }
         }
     }
