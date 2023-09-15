@@ -101,15 +101,11 @@ public class Menu extends BaseRepository {
         while (loop){
             Printer.printMenu(Constant.LOANS_MENU);
             int choice = inputUtility.giveIntegerInput(Constant.CHOICE);
-            switch(choice){
-                case 1:
-                    System.out.println("tuition loan");
-                case 2:
-                    System.out.println("education loan");
-                case 3:
-                    System.out.println("housing deposit loan");
-                case 4:
-                    loop = false;
+            switch (choice) {
+                case 1 -> System.out.println("1.Tuition loan");
+                case 2 -> System.out.println("2.Education loan");
+                case 3 -> System.out.println("3.Housing deposit loan");
+                case 4 -> loop = false;
             }
         }
     }
