@@ -13,7 +13,7 @@ import lombok.*;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class EducationalLoans {
+public class EducationalLoan {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
