@@ -4,6 +4,8 @@ public class Constant {
 
     public static final String[] MAIN_MENU = {"SingUp", "SignIn", "Exit"};
 
+    public static final String[] LOANS_MENU = {"Tuition loan", "Educational loan", "Housing deposit loan", "Exit"};
+
     public static final String CHOICE = "please, which one you are";
 
     public static final String PASSWORD_NOTICE =
