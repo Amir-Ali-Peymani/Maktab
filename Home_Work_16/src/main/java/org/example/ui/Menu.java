@@ -12,8 +12,8 @@ import java.util.List;
 
 public class Menu extends BaseRepository {
     public static void main(String[] args) {
-//        menu();
-        signUp();
+        menu();
+//        signUp();
     }
 
     public static void menu(){
@@ -25,7 +25,7 @@ public class Menu extends BaseRepository {
                 signUp();
             }
             if (choice == 2){
-                System.out.println("2.signIn");
+                signIn();
             }
             if (choice == 3){
                 loop = false;
@@ -79,18 +79,22 @@ public class Menu extends BaseRepository {
         String password;
         System.out.print(Constant.USER_NAME);
         userName = scanner.next();
-        System.out.println(Constant.PASSWORD);
+        System.out.print(Constant.PASSWORD);
         password = scanner.next();
         List<StudentProfile> studentProfile = StudentProfileBusiness.getAllStudentProfiles();
 
         for (StudentProfile profile : studentProfile){
             if (profile.getUserName().equals(userName) && profile.getPassword().equals(password)){
                 System.out.println("Sign in Successfully! ");
+
             }
             else {
                 System.out.println("Sign in Failure");
             }
         }
+    }
+
+    public static void loansMenu(){
 
     }
 }
