@@ -94,17 +94,23 @@ public class Constant {
 
     public static final String PRICE_EDUCATIONAL_LOAN_THREE = "2,600,000";
 
-    public static final String PRICE_HOUSING_DEPOSITE_ONE = "32,000,000";
+    public static final String PRICE_HOUSING_DEPOSIT_ONE = "32,000,000";
 
-    public static final String PRICE_HOUSING_DEPOSITE_TWO = "26,000,000";
+    public static final String PRICE_HOUSING_DEPOSIT_TWO = "26,000,000";
 
-    public static final String PRICE_HOUSING_DEPOSITE_THREE = "19,500,000";
+    public static final String PRICE_HOUSING_DEPOSIT_THREE = "19,500,000";
 
-    public static final String HOUSING_DEPOSITE_ONE = "Tehran";
+    public static final String PRICE_TUITION_ONE = "1,300,000";
 
-    public static final String HOUSING_DEPOSITE_TWO = "Major City's";
+    public static final String PRICE_TUITION_TWO = "2,600,000";
 
-    public static final String HOUSING_DEPOSITE_THREE = "Other's";
+    public static final String PRICE_TUITION_THREE = "65,000,000";
+
+    public static final String HOUSING_DEPOSIT_ONE = "Tehran";
+
+    public static final String HOUSING_DEPOSIT_TWO = "Major City's";
+
+    public static final String HOUSING_DEPOSIT_THREE = "Other's";
 
     public static final String SECTION_ONE = "Bachelor continues";
 
@@ -113,5 +119,7 @@ public class Constant {
     public static final String SECTION_THREE = "Specialist Doctor discontinuous";
 
     public static final String DOUBLE_DOT = " : ";
+
+    public static final String DOT = ".";
 
 }
