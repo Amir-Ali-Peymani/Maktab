@@ -86,11 +86,23 @@ public class Constant {
 
     public static final String PAYMENT_TYPE_METHOD_NAME ="Once in the whole half semester";
 
-    public static final String PRICE_ONE = "1,900,000";
+    public static final String PRICE_EDUCATIONAL_LOAN_ONE = "1,900,000";
 
-    public static final String PRICE_TWO = "2,250,000";
+    public static final String PRICE_EDUCATIONAL_LOAN_TWO = "2,250,000";
 
-    public static final String PRICE_THREE = "2,600,000";
+    public static final String PRICE_EDUCATIONAL_LOAN_THREE = "2,600,000";
+
+    public static final String PRICE_HOUSING_DEPOSITE_ONE = "32,000,000";
+
+    public static final String PRICE_HOUSING_DEPOSITE_TWO = "26,000,000";
+
+    public static final String PRICE_HOUSING_DEPOSITE_THREE = "19,500,000";
+
+    public static final String HOUSING_DEPOSITE_ONE = "Tehran";
+
+    public static final String HOUSING_DEPOSITE_TWO = "Major City's";
+
+    public static final String HOUSING_DEPOSITE_THREE = "Other's";
 
     public static final String SECTION_ONE = "Bachelor continues";
 
