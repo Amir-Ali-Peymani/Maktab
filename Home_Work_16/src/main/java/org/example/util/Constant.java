@@ -83,4 +83,19 @@ public class Constant {
     public static final String EDUCATIONAL_LEVEL_NAME = "Educational Level: ";
 
     public static final String APPROVAL_TYPE_NAME = "Approval Type: ";
+
+    public static final String PAYMENT_TYPE_METHOD_NAME ="Once in the whole half semester";
+
+    public static final String PRICE_ONE = "1,900,000";
+
+    public static final String PRICE_TWO = "2,250,000";
+
+    public static final String PRICE_THREE = "2,600,000";
+
+    public static final String SECTION_ONE = "Bachelor continues";
+
+    public static final String SECTION_TWO = "Master continues, Doctoral, Professional, Continues doctoral";
+
+    public static final String SECTION_THREE = "Specialist Doctor discontinuous";
+
 }
