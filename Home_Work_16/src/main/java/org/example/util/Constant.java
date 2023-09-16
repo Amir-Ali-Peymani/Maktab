@@ -86,6 +86,8 @@ public class Constant {
 
     public static final String PAYMENT_TYPE_METHOD_NAME ="Once in the whole half semester";
 
+    public static final String PAYMENT_TYPE_METHOD_HOUSING_DEPOSIT_LOAN = "Once in the whole section";
+
     public static final String PRICE_EDUCATIONAL_LOAN_ONE = "1,900,000";
 
     public static final String PRICE_EDUCATIONAL_LOAN_TWO = "2,250,000";
