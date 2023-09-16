@@ -2,9 +2,11 @@ package org.example.ui;
 
 import org.example.base.BaseRepository;
 import org.example.business.EducationalLoanBusiness;
+import org.example.business.HousingDepositLoanBusiness;
 import org.example.business.StudentBusiness;
 import org.example.business.StudentProfileBusiness;
 import org.example.entity.EducationalLoan;
+import org.example.entity.HousingDepositLoan;
 import org.example.entity.StudentProfile;
 import org.example.util.Constant;
 
@@ -14,7 +16,7 @@ import java.util.List;
 
 public class Menu extends BaseRepository {
     public static void main(String[] args) {
-//        loansMenu();
+        loansMenu();
 //        menu();
 //        signUp();
     }
@@ -94,29 +96,31 @@ public class Menu extends BaseRepository {
 
     public static void loansMenu(){
         EducationalLoanBusiness.inputingEducationalLoan();
+        HousingDepositLoanBusiness.inputingHousingDepositLoan();
         boolean loop = true;
         while (loop){
             Printer.printMenu(Constant.LOANS_MENU);
+            int num = 0;
             int choice = inputUtility.giveIntegerInput(Constant.CHOICE);
             switch (choice) {
-                case 1 :
-                    System.out.println("1.Tuition loan");
-                    break;
-                case 2:
-                    int num = 0;
-                    for (EducationalLoan loan : EducationalLoanBusiness.getAllEducationalLoan()){
+                case 1 -> System.out.println("1.Tuition loan");
+                case 2 -> {
+                    for (EducationalLoan loan : EducationalLoanBusiness.getAllEducationalLoan()) {
                         System.out.print(num += 1);
-                        System.out.print("."+ loan.getPaymentMethod() + Constant.DOUBLE_DOT + loan.getPrice() +
+                        System.out.print(Constant.DOT + loan.getPaymentMethod() + Constant.DOUBLE_DOT + loan.getPrice() +
                                 Constant.DOUBLE_DOT + loan.getSection());
                         System.out.println();
                     }
-                    break;
-                case 3 :
-                    System.out.println("3.Housing deposit loan");
-                    break;
-                case 4 :
-                    loop = false;
-                    break;
+                }
+                case 3 -> {
+                    for (HousingDepositLoan loan : HousingDepositLoanBusiness.getAllHousingDepositesLoan()) {
+                        System.out.print(num += 1);
+                        System.out.print(Constant.DOT + loan.getPaymentMethod() + Constant.DOUBLE_DOT + loan.getPrice() +
+                                Constant.DOUBLE_DOT + loan.getCity());
+                        System.out.println();
+                    }
+                }
+                case 4 -> loop = false;
             }
         }
     }
