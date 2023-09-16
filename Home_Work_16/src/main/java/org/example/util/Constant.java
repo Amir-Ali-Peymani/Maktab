@@ -98,4 +98,6 @@ public class Constant {
 
     public static final String SECTION_THREE = "Specialist Doctor discontinuous";
 
+    public static final String DOUBLE_DOT = " : ";
+
 }
