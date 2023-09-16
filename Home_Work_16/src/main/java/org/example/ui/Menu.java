@@ -1,13 +1,11 @@
 package org.example.ui;
 
 import org.example.base.BaseRepository;
-import org.example.business.EducationalLoanBusiness;
-import org.example.business.HousingDepositLoanBusiness;
-import org.example.business.StudentBusiness;
-import org.example.business.StudentProfileBusiness;
+import org.example.business.*;
 import org.example.entity.EducationalLoan;
 import org.example.entity.HousingDepositLoan;
 import org.example.entity.StudentProfile;
+import org.example.entity.TuitionLoan;
 import org.example.util.Constant;
 
 import java.time.LocalDate;
@@ -97,13 +95,21 @@ public class Menu extends BaseRepository {
     public static void loansMenu(){
         EducationalLoanBusiness.inputingEducationalLoan();
         HousingDepositLoanBusiness.inputingHousingDepositLoan();
+        TuitionLoanBusiness.inputingTuitionLoan();
         boolean loop = true;
         while (loop){
             Printer.printMenu(Constant.LOANS_MENU);
             int num = 0;
             int choice = inputUtility.giveIntegerInput(Constant.CHOICE);
             switch (choice) {
-                case 1 -> System.out.println("1.Tuition loan");
+                case 1 -> {
+                    for (TuitionLoan loan : TuitionLoanBusiness.getAllTuitionLoan()) {
+                        System.out.print(num += 1);
+                        System.out.print(Constant.DOT + loan.getPaymentMethod() + Constant.DOUBLE_DOT + loan.getPrice() +
+                                Constant.DOUBLE_DOT + loan.getSection());
+                        System.out.println();
+                    }
+                }
                 case 2 -> {
                     for (EducationalLoan loan : EducationalLoanBusiness.getAllEducationalLoan()) {
                         System.out.print(num += 1);
