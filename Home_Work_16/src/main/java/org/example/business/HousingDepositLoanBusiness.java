@@ -21,16 +21,16 @@ public class HousingDepositLoanBusiness {
         HousingDepositLoan housingDepositLoan2 = new HousingDepositLoan();
         HousingDepositLoan housingDepositLoan3 = new HousingDepositLoan();
         housingDepositLoan1.setPaymentMethod(Constant.PAYMENT_TYPE_METHOD_HOUSING_DEPOSIT_LOAN);
-        housingDepositLoan1.setPrice(Constant.PRICE_HOUSING_DEPOSITE_ONE);
-        housingDepositLoan1.setCity(Constant.HOUSING_DEPOSITE_ONE);
+        housingDepositLoan1.setPrice(Constant.PRICE_HOUSING_DEPOSIT_ONE);
+        housingDepositLoan1.setCity(Constant.HOUSING_DEPOSIT_ONE);
         housingDepositLoanService.saveHousingDepositLoan(housingDepositLoan1);
         housingDepositLoan2.setPaymentMethod(Constant.PAYMENT_TYPE_METHOD_HOUSING_DEPOSIT_LOAN);
-        housingDepositLoan2.setPrice(Constant.PRICE_HOUSING_DEPOSITE_TWO);
-        housingDepositLoan2.setCity(Constant.HOUSING_DEPOSITE_TWO);
+        housingDepositLoan2.setPrice(Constant.PRICE_HOUSING_DEPOSIT_TWO);
+        housingDepositLoan2.setCity(Constant.HOUSING_DEPOSIT_TWO);
         housingDepositLoanService.saveHousingDepositLoan(housingDepositLoan2);
         housingDepositLoan3.setPaymentMethod(Constant.PAYMENT_TYPE_METHOD_HOUSING_DEPOSIT_LOAN);
-        housingDepositLoan3.setPrice(Constant.PRICE_HOUSING_DEPOSITE_THREE);
-        housingDepositLoan3.setCity(Constant.HOUSING_DEPOSITE_THREE);
+        housingDepositLoan3.setPrice(Constant.PRICE_HOUSING_DEPOSIT_THREE);
+        housingDepositLoan3.setCity(Constant.HOUSING_DEPOSIT_THREE);
         housingDepositLoanService.saveHousingDepositLoan(housingDepositLoan3);
 
     }
