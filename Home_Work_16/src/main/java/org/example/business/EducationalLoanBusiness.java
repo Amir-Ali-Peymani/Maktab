@@ -22,15 +22,15 @@ public class EducationalLoanBusiness {
         EducationalLoan educationalLoan2 = new EducationalLoan();
         EducationalLoan educationalLoan3 = new EducationalLoan();
         educationalLoan1.setPaymentMethod(Constant.PAYMENT_TYPE_METHOD_NAME);
-        educationalLoan1.setPrice(Constant.PRICE_ONE);
+        educationalLoan1.setPrice(Constant.PRICE_EDUCATIONAL_LOAN_ONE);
         educationalLoan1.setSection(Constant.SECTION_ONE);
         educationalLoanService.saveEducationalLoan(educationalLoan1);
         educationalLoan2.setPaymentMethod(Constant.PAYMENT_TYPE_METHOD_NAME);
-        educationalLoan2.setPrice(Constant.PRICE_TWO);
+        educationalLoan2.setPrice(Constant.PRICE_EDUCATIONAL_LOAN_TWO);
         educationalLoan2.setSection(Constant.SECTION_TWO);
         educationalLoanService.saveEducationalLoan(educationalLoan2);
         educationalLoan3.setPaymentMethod(Constant.PAYMENT_TYPE_METHOD_NAME);
-        educationalLoan3.setPrice(Constant.PRICE_THREE);
+        educationalLoan3.setPrice(Constant.PRICE_EDUCATIONAL_LOAN_THREE);
         educationalLoan3.setSection(Constant.SECTION_THREE);
         educationalLoanService.saveEducationalLoan(educationalLoan3);
     }
