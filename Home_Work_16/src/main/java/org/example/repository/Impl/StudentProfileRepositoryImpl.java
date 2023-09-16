@@ -7,6 +7,7 @@ import org.example.repository.StudentProfileRepository;
 import java.util.List;
 
 public class StudentProfileRepositoryImpl extends BaseRepository implements StudentProfileRepository {
+
     @Override
     public void saveStudent(StudentProfile studentProfile) {
         em.getTransaction().begin();

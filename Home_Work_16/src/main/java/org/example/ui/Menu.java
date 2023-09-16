@@ -14,8 +14,7 @@ import java.util.List;
 
 public class Menu extends BaseRepository {
     public static void main(String[] args) {
-//        EducationalLoanBusiness.inputtingEducationalLoan();
-        loansMenu();
+//        loansMenu();
 //        menu();
 //        signUp();
     }
@@ -72,7 +71,6 @@ public class Menu extends BaseRepository {
                         email));
 
     }
-
 
     public static void signIn(){
         String userName;
