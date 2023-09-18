@@ -22,9 +22,6 @@ public class StudentProfile {
 
     private String email;
 
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "student_id")
+    @OneToOne(mappedBy = "studentProfile")
     private Student student;
-
 }

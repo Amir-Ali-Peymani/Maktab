@@ -14,9 +14,9 @@ import java.util.List;
 
 public class Menu extends BaseRepository {
     public static void main(String[] args) {
-//        loansMenu();
-        menu();
-//        signUp();
+//        menu();
+//       signUp();
+        loansMenu();
     }
 
     public static void menu(){
@@ -56,9 +56,11 @@ public class Menu extends BaseRepository {
         lastName = inputUtility.getValidName(Constant.NAME_NOTICE, Constant.LAST_NAME);
         fatherName = inputUtility.getValidName(Constant.NAME_NOTICE, Constant.FATHER_NAME);
         motherName = inputUtility.getValidName(Constant.NAME_NOTICE, Constant.MOTHER_NAME);
-        birthCertificateNumber = inputUtility.getValidCodeToCheck(Constant.BIRTH_CERTIFICATE_NOTICE, Constant.BIRTH_CERTIFICATE_NUMBER);
+        birthCertificateNumber = inputUtility.getValidCodeToCheck(Constant.BIRTH_CERTIFICATE_NOTICE, Constant.
+                BIRTH_CERTIFICATE_NUMBER);
         nationalIdNumber = inputUtility.getValidCodeToCheck(Constant.NATIONAL_CODE_NOTICE, Constant.NATIONAL_ID_NUMBER);
-        birthDate = inputUtility.getValidBirthDate(Constant.BIRTH_DATE_VALID_FORM, Constant.BIRTH_DATE_NOTICE, Constant.BIRTH_DATE_WARNING, Constant.BIRTH_DATE_INVALID_INFO);
+        birthDate = inputUtility.getValidBirthDate(Constant.BIRTH_DATE_VALID_FORM, Constant.BIRTH_DATE_NOTICE, Constant.
+                BIRTH_DATE_WARNING, Constant.BIRTH_DATE_INVALID_INFO);
         studentNumber = inputUtility.getValidCodeToCheck(Constant.STUDENT_ID_NUMBER_NOTICE, Constant.STUDENT_ID_NUMBER);
         universityName = inputUtility.getValidName(Constant.UNIVERSITY_NAME_NOTICE, Constant.UNIVERSITY_NAME);
         universityType = inputUtility.getValidName(Constant.UNIVERSITY_TYPE_NOTICE, Constant.UNIVERSITY_TYPE_NAME);
@@ -67,8 +69,8 @@ public class Menu extends BaseRepository {
         approvalType = inputUtility.getValidName(Constant.APPROVAL_TYPE_NOTICE, Constant.APPROVAL_TYPE_NAME);
         StudentBusiness.createStudentBusiness(name, lastName, fatherName, motherName, birthCertificateNumber,
                 nationalIdNumber, birthDate, studentNumber, universityName, universityType, administrative,
-                educationalLevel, approvalType, StudentProfileBusiness.createStudentProfileBusiness(userName, password,
-                        email));
+                educationalLevel, approvalType,
+                StudentProfileBusiness.createStudentProfileBusiness(userName, password, email));
 
     }
 
@@ -100,34 +102,48 @@ public class Menu extends BaseRepository {
             Printer.printMenu(Constant.LOANS_MENU);
             int num = 0;
             int choice = inputUtility.giveIntegerInput(Constant.CHOICE);
+            int numberChoice;
             switch (choice) {
                 case 1 -> {
+                    System.out.println(Constant.MENU_LINE);
                     for (TuitionLoan loan : TuitionLoanBusiness.getAllTuitionLoan()) {
                         System.out.print(num += 1);
                         System.out.print(Constant.DOT + loan.getPaymentMethod() + Constant.DOUBLE_DOT + loan.getPrice() +
                                 Constant.DOUBLE_DOT + loan.getSection());
                         System.out.println();
                     }
+                    System.out.println(Constant.MENU_LINE);
+//                    numberChoice = inputUtility.giveIntegerInput(Constant.CHOICE);
                 }
                 case 2 -> {
+                    System.out.println(Constant.MENU_LINE);
                     for (EducationalLoan loan : EducationalLoanBusiness.getAllEducationalLoan()) {
                         System.out.print(num += 1);
                         System.out.print(Constant.DOT + loan.getPaymentMethod() + Constant.DOUBLE_DOT + loan.getPrice() +
                                 Constant.DOUBLE_DOT + loan.getSection());
                         System.out.println();
                     }
+                    System.out.println(Constant.MENU_LINE);
+//                    numberChoice = inputUtility.giveIntegerInput(Constant.CHOICE);
                 }
                 case 3 -> {
+                    System.out.println(Constant.MENU_LINE);
                     for (HousingDepositLoan loan : HousingDepositLoanBusiness.getAllHousingDepositesLoan()) {
                         System.out.print(num += 1);
                         System.out.print(Constant.DOT + loan.getPaymentMethod() + Constant.DOUBLE_DOT + loan.getPrice() +
                                 Constant.DOUBLE_DOT + loan.getCity());
                         System.out.println();
                     }
+                    System.out.println(Constant.MENU_LINE);
+//                    numberChoice = inputUtility.giveIntegerInput(Constant.CHOICE);
                 }
                 case 4 -> loop = false;
             }
         }
+    }
+
+    public static void tuitionLoan(){
+
     }
 }
 

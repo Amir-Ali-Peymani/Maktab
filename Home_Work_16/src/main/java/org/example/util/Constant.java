@@ -6,14 +6,19 @@ public class Constant {
 
     public static final String[] LOANS_MENU = {"Tuition loan", "Educational loan", "Housing deposit loan", "Exit"};
 
-    public static final String CHOICE = "please, which one you are";
+    public static final String[] EDUCATIONAL_MENU = {"Bachelor", "Master", "Doctoral", ""};
+
+    public static final String CHOICE = "please, which one is your choice: ";
+
+
 
     public static final String PASSWORD_NOTICE =
-            "- 8 characters\n" +
-                    "- at least one capital letter\n" +
-                    "- at least one small word\n" +
-                    "- at least contains one of these characters: @ # $ % &\n" +
-                    "- at least one number";
+            """
+                    - 8 characters
+                    - at least one capital letter
+                    - at least one small word
+                    - at least contains one of these characters: @ # $ % &
+                    - at least one number""";
 
     public static final String NAME_NOTICE = "- The first letter should be capital\n" +
             "- It should be from letter a to z !!";
@@ -45,7 +50,7 @@ public class Constant {
 
     public static final String BIRTH_DATE_VALID_FORM = "yyyy-MM-dd";
 
-    public static final String BIRTH_DATE_NOTICE = "If the day is one digit put zero before it \n"+
+    public static final String BIRTH_DATE_NOTICE = "- If the day is one digit put zero before it \n"+
             "Enter your birth date (yyyy-MM-dd): ";
 
     public static final String BIRTH_DATE_WARNING = "Birth date cannot be in the future.";
@@ -124,5 +129,7 @@ public class Constant {
     public static final String DOUBLE_DOT = " : ";
 
     public static final String DOT = ".";
+
+    public static final String MENU_LINE = "--------------------------------------------------------";
 
 }

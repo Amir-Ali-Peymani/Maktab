@@ -43,7 +43,8 @@ public class Student {
 
     private String approvalType;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "studentProfile_id")
     private StudentProfile studentProfile;
 
 }
