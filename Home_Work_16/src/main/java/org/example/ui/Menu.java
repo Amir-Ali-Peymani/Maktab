@@ -14,8 +14,8 @@ import java.util.List;
 
 public class Menu extends BaseRepository {
     public static void main(String[] args) {
-        loansMenu();
-//        menu();
+//        loansMenu();
+        menu();
 //        signUp();
     }
 
@@ -83,11 +83,10 @@ public class Menu extends BaseRepository {
 
         for (StudentProfile profile : studentProfile){
             if (profile.getUserName().equals(userName) && profile.getPassword().equals(password)){
-                System.out.println("Sign in Successfully! ");
-
+                loansMenu();
             }
             else {
-                System.out.println("Sign in Failure");
+                System.out.println(Constant.FAIL);
             }
         }
     }
