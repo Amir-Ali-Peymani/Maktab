@@ -45,7 +45,8 @@ public class Constant {
 
     public static final String BIRTH_DATE_VALID_FORM = "yyyy-MM-dd";
 
-    public static final String BIRTH_DATE_NOTICE = "Enter your birth date (yyyy-MM-dd): ";
+    public static final String BIRTH_DATE_NOTICE = "If the day is one digit put zero before it \n"+
+            "Enter your birth date (yyyy-MM-dd): ";
 
     public static final String BIRTH_DATE_WARNING = "Birth date cannot be in the future.";
 
@@ -117,6 +118,8 @@ public class Constant {
     public static final String SECTION_TWO = "Master continues, Doctoral, Professional, Continues doctoral";
 
     public static final String SECTION_THREE = "Specialist Doctor discontinuous";
+
+    public static final String FAIL = "Sign in Failure";
 
     public static final String DOUBLE_DOT = " : ";
 
