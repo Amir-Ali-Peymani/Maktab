@@ -14,9 +14,10 @@ import java.util.List;
 
 public class Menu extends BaseRepository {
     public static void main(String[] args) {
+
 //        menu();
 //       signUp();
-        loansMenu();
+        loansMenu("Bachelor continues");
     }
 
     public static void menu(){
@@ -85,7 +86,7 @@ public class Menu extends BaseRepository {
 
         for (StudentProfile profile : studentProfile){
             if (profile.getUserName().equals(userName) && profile.getPassword().equals(password)){
-                loansMenu();
+                loansMenu("Bachelor");
             }
             else {
                 System.out.println(Constant.FAIL);
@@ -93,7 +94,7 @@ public class Menu extends BaseRepository {
         }
     }
 
-    public static void loansMenu(){
+    public static void loansMenu(String educationalLevel){
         EducationalLoanBusiness.inputingEducationalLoan();
         HousingDepositLoanBusiness.inputingHousingDepositLoan();
         TuitionLoanBusiness.inputingTuitionLoan();
@@ -101,20 +102,10 @@ public class Menu extends BaseRepository {
         while (loop){
             Printer.printMenu(Constant.LOANS_MENU);
             int num = 0;
+            int numberChoice = 0;
             int choice = inputUtility.giveIntegerInput(Constant.CHOICE);
-            int numberChoice;
             switch (choice) {
-                case 1 -> {
-                    System.out.println(Constant.MENU_LINE);
-                    for (TuitionLoan loan : TuitionLoanBusiness.getAllTuitionLoan()) {
-                        System.out.print(num += 1);
-                        System.out.print(Constant.DOT + loan.getPaymentMethod() + Constant.DOUBLE_DOT + loan.getPrice() +
-                                Constant.DOUBLE_DOT + loan.getSection());
-                        System.out.println();
-                    }
-                    System.out.println(Constant.MENU_LINE);
-//                    numberChoice = inputUtility.giveIntegerInput(Constant.CHOICE);
-                }
+                case 1 ->  tuitionLoan(num, numberChoice, educationalLevel);
                 case 2 -> {
                     System.out.println(Constant.MENU_LINE);
                     for (EducationalLoan loan : EducationalLoanBusiness.getAllEducationalLoan()) {
@@ -142,7 +133,36 @@ public class Menu extends BaseRepository {
         }
     }
 
-    public static void tuitionLoan(){
+    public static void tuitionLoan(int num, int numberChoice, String educationalLevel){
+        System.out.println(Constant.MENU_LINE);
+//        for (TuitionLoan loan : TuitionLoanBusiness.getAllTuitionLoan()) {
+//            System.out.print(num += 1);
+//            System.out.print(Constant.DOT + loan.getPaymentMethod() + Constant.DOUBLE_DOT + loan.getPrice() +
+//                    Constant.DOUBLE_DOT + loan.getSection());
+//            System.out.println();
+//        }
+
+
+        List<TuitionLoan> loans = TuitionLoanBusiness.getAllTuitionLoan();
+//
+        for (int i = 0; i < TuitionLoanBusiness.getAllTuitionLoan().size() ; i++) {
+            TuitionLoan loan = TuitionLoanBusiness.getAllTuitionLoan().get(i);
+            System.out.print( i+1 + Constant.DOT + loan.getPaymentMethod() + Constant.DOUBLE_DOT + loan.getPrice() +
+                    Constant.DOUBLE_DOT + loan.getSection());
+            System.out.println();
+        }
+        System.out.println(Constant.MENU_LINE);
+        numberChoice = inputUtility.giveIntegerInput(Constant.CHOICE);
+        switch (numberChoice) {
+            case 1 -> {
+                if (inputUtility.compareStringsIgnoreSpaces(loans.get(1).getSection(), educationalLevel)){
+                    System.out.println("you have successfully");
+                }
+            }
+            case 2 -> {
+
+            }
+        }
 
     }
 }
