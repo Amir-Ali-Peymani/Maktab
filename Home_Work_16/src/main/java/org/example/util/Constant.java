@@ -6,11 +6,15 @@ public class Constant {
 
     public static final String[] LOANS_MENU = {"Tuition loan", "Educational loan", "Housing deposit loan", "Exit"};
 
-    public static final String[] EDUCATIONAL_MENU = {"Bachelor", "Master", "Doctoral", ""};
+    public static final String[] EDUCATIONAL_MENU = {"Bachelor continues", "Master continues", "Doctoral", "Professional"
+    , "Continues Doctoral", "Specialists Doctor discontinues" , "Bachelor discontinues" , "Master discontinues"};
 
-    public static final String CHOICE = "please, which one is your choice: ";
+    public static final String[] APPROVAL_TYPE = {"Evening", "Non-profit Universities", "Pardis", "Surplus Capacity",
+    "Payam-e Noor", "Applied Science", "Azad University"};
 
+    public static final String CHOICE = "please, which one is your choice";
 
+    public static final String INVALID_CHOICE = "Invalid choice. Please select a valid option.";
 
     public static final String PASSWORD_NOTICE =
             """

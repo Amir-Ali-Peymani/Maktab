@@ -14,10 +14,11 @@ import java.util.List;
 
 public class Menu extends BaseRepository {
     public static void main(String[] args) {
-
+//        approvalType();
+        System.out.println(approvalType());
 //        menu();
 //       signUp();
-        loansMenu("Bachelor continues");
+//        loansMenu("Bachelor continues");
     }
 
     public static void menu(){
@@ -66,13 +67,49 @@ public class Menu extends BaseRepository {
         universityName = inputUtility.getValidName(Constant.UNIVERSITY_NAME_NOTICE, Constant.UNIVERSITY_NAME);
         universityType = inputUtility.getValidName(Constant.UNIVERSITY_TYPE_NOTICE, Constant.UNIVERSITY_TYPE_NAME);
         administrative = inputUtility.isValidAdministrative(Constant.ADMINISTRATIVE_NOTICE, Constant.ADMINISTRATIVE_NAME);
-        educationalLevel = inputUtility.getValidName(Constant.EDUCATIONAL_LEVEL_NOTICE, Constant.EDUCATIONAL_LEVEL_NAME);
-        approvalType = inputUtility.getValidName(Constant.APPROVAL_TYPE_NOTICE, Constant.APPROVAL_TYPE_NAME);
+        educationalLevel = educationalMenu();
+        approvalType = approvalType();
         StudentBusiness.createStudentBusiness(name, lastName, fatherName, motherName, birthCertificateNumber,
                 nationalIdNumber, birthDate, studentNumber, universityName, universityType, administrative,
                 educationalLevel, approvalType,
                 StudentProfileBusiness.createStudentProfileBusiness(userName, password, email));
 
+    }
+
+    public static String educationalMenu(){
+        String educationalLevel;
+        while (true){
+            Printer.printMenu(Constant.EDUCATIONAL_MENU);
+            int choice = inputUtility.giveIntegerInput(Constant.CHOICE);
+            if (choice >= 0 && choice <= Constant.EDUCATIONAL_MENU.length){
+                educationalLevel = Constant.EDUCATIONAL_MENU[choice - 1];
+                break;
+            } else{
+                System.out.println(Constant.INVALID_CHOICE);
+            }
+        }
+        return educationalLevel;
+    }
+
+    public static String approvalType(){
+        String approvalType;
+        while (true){
+            Printer.printMenu(Constant.APPROVAL_TYPE);
+            int choice = inputUtility.giveIntegerInput(Constant.CHOICE);
+            if (choice >= 0 && choice <= Constant.APPROVAL_TYPE.length){
+                approvalType = Constant.APPROVAL_TYPE[choice -1];
+                break;
+            } else {
+                System.out.println(Constant.INVALID_CHOICE);
+            }
+        }
+        return approvalType;
+    }
+
+    public static String cities(){
+        String cities;
+
+        return null;
     }
 
     public static void signIn(){
@@ -83,7 +120,6 @@ public class Menu extends BaseRepository {
         System.out.print(Constant.PASSWORD);
         password = scanner.next();
         List<StudentProfile> studentProfile = StudentProfileBusiness.getAllStudentProfiles();
-
         for (StudentProfile profile : studentProfile){
             if (profile.getUserName().equals(userName) && profile.getPassword().equals(password)){
                 loansMenu("Bachelor");
@@ -135,16 +171,7 @@ public class Menu extends BaseRepository {
 
     public static void tuitionLoan(int num, int numberChoice, String educationalLevel){
         System.out.println(Constant.MENU_LINE);
-//        for (TuitionLoan loan : TuitionLoanBusiness.getAllTuitionLoan()) {
-//            System.out.print(num += 1);
-//            System.out.print(Constant.DOT + loan.getPaymentMethod() + Constant.DOUBLE_DOT + loan.getPrice() +
-//                    Constant.DOUBLE_DOT + loan.getSection());
-//            System.out.println();
-//        }
-
-
         List<TuitionLoan> loans = TuitionLoanBusiness.getAllTuitionLoan();
-//
         for (int i = 0; i < TuitionLoanBusiness.getAllTuitionLoan().size() ; i++) {
             TuitionLoan loan = TuitionLoanBusiness.getAllTuitionLoan().get(i);
             System.out.print( i+1 + Constant.DOT + loan.getPaymentMethod() + Constant.DOUBLE_DOT + loan.getPrice() +
