@@ -2,6 +2,19 @@ package org.example.util;
 
 public class Constant {
 
+    public static final String[] CITIES_NAME = {  "Gilan",
+            "Isfahan",
+            "East Azerbaijan",
+            "Fars",
+            "Khuzestan",
+            "Qom",
+            "Razavi Khorasan",
+            "Alborz"};
+
+    public static final String[] IS_MARRIED = {"Yes", "No"};
+
+    public static final String [] SEX_TYPE = {"Male", "Female"};
+
     public static final String[] MAIN_MENU = {"SingUp", "SignIn", "Exit"};
 
     public static final String[] LOANS_MENU = {"Tuition loan", "Educational loan", "Housing deposit loan", "Exit"};
