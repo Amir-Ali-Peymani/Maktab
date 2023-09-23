@@ -15,7 +15,7 @@ import java.util.List;
 public class Menu extends BaseRepository {
     public static void main(String[] args) {
 //        approvalType();
-        System.out.println(approvalType());
+//        System.out.println(approvalType());
 //        menu();
 //       signUp();
 //        loansMenu("Bachelor continues");
@@ -34,7 +34,7 @@ public class Menu extends BaseRepository {
         }
     }
 
-    public static void signUp(){
+    public static void signUp() {
         String userName;
         String password;
         String email;
@@ -51,6 +51,9 @@ public class Menu extends BaseRepository {
         String administrative;
         String educationalLevel;
         String approvalType;
+        String cities;
+        String sex;
+        Boolean isMarried;
         userName = inputUtility.getValidCodeToCheck(Constant.USER_NAME_NOTICE, Constant.USER_NAME);
         password = inputUtility.getValiddPassword(Constant.PASSWORD_NOTICE, Constant.PASSWORD);
         email = inputUtility.getValidEmail(Constant.EMAIL_NOTICE, Constant.EMAIL);
@@ -69,9 +72,12 @@ public class Menu extends BaseRepository {
         administrative = inputUtility.isValidAdministrative(Constant.ADMINISTRATIVE_NOTICE, Constant.ADMINISTRATIVE_NAME);
         educationalLevel = educationalMenu();
         approvalType = approvalType();
+        cities = cities();
+        sex = getSexType();
+        isMarried = getIsMarried();
         StudentBusiness.createStudentBusiness(name, lastName, fatherName, motherName, birthCertificateNumber,
                 nationalIdNumber, birthDate, studentNumber, universityName, universityType, administrative,
-                educationalLevel, approvalType,
+                educationalLevel, approvalType, cities, sex, isMarried
                 StudentProfileBusiness.createStudentProfileBusiness(userName, password, email));
 
     }
@@ -108,8 +114,49 @@ public class Menu extends BaseRepository {
 
     public static String cities(){
         String cities;
+        while (true){
+            Printer.printMenu(Constant.CITIES_NAME);
+            int choice = inputUtility.giveIntegerInput(Constant.CHOICE);
+            if ( choice >= 0 && choice <= Constant.CITIES_NAME.length){
+                cities = Constant.CITIES_NAME[choice -1 ];
+                break;
+            } else {
+                System.out.println(Constant.INVALID_CHOICE);
+            }
+        }
+        return cities;
+    }
 
-        return null;
+    public static Boolean getIsMarried(){
+        boolean isMarried;
+        while (true) {
+            Printer.printMenu(Constant.IS_MARRIED);
+            int choice = inputUtility.giveIntegerInput(Constant.CHOICE);
+            if (choice >= 0 && choice <= Constant.IS_MARRIED.length){
+                if (choice == 1){
+                    isMarried = true;
+                }
+                isMarried = false;
+                break;
+            } else {
+                System.out.println(Constant.INVALID_CHOICE);
+            }
+        }
+        return isMarried;
+    }
+    public static String getSexType(){
+        String sexType;
+        while (true){
+            Printer.printMenu(Constant.SEX_TYPE);
+            int choice = inputUtility.giveIntegerInput(Constant.CHOICE);
+            if ( choice >= 0 && choice <= Constant.SEX_TYPE.length){
+                sexType = Constant.SEX_TYPE[choice -1];
+                break;
+            } else {
+                System.out.println(Constant.INVALID_CHOICE);
+            }
+        }
+        return  null;
     }
 
     public static void signIn(){
@@ -131,9 +178,11 @@ public class Menu extends BaseRepository {
     }
 
     public static void loansMenu(String educationalLevel){
-        EducationalLoanBusiness.inputingEducationalLoan();
-        HousingDepositLoanBusiness.inputingHousingDepositLoan();
-        TuitionLoanBusiness.inputingTuitionLoan();
+        if (isDbEmpty()){
+            EducationalLoanBusiness.inputingEducationalLoan();
+            HousingDepositLoanBusiness.inputingHousingDepositLoan();
+            TuitionLoanBusiness.inputingTuitionLoan();
+        }
         boolean loop = true;
         while (loop){
             Printer.printMenu(Constant.LOANS_MENU);
@@ -192,6 +241,13 @@ public class Menu extends BaseRepository {
         }
 
     }
+
+
+    public static Boolean isDbEmpty(){
+        return TuitionLoanBusiness.getAllTuitionLoan().isEmpty();
+    }
+
+
 }
 
 
