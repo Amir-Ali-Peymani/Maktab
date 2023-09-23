@@ -20,6 +20,7 @@ public class StudentBusiness {
                                              String BirthCertificateNumber, String NationalIdNumber, LocalDate birthDate,
                                              String studentId, String universityName, String universityType,
                                              String admissionYear, String educationalLevel, String approvalType,
+                                             String city, String sex, Boolean isMarried,
                                              StudentProfile studentProfile){
         Student student = new Student();
         student.setName(name);
@@ -35,6 +36,9 @@ public class StudentBusiness {
         student.setAdmissionYear(admissionYear);
         student.setEducationalLevel(educationalLevel);
         student.setApprovalType(approvalType);
+        student.setCity(city);
+        student.setSex(sex);
+        student.setIsMarried(isMarried);
         student.setStudentProfile(studentProfile);
         studentService.saveStudent(student);
     }
