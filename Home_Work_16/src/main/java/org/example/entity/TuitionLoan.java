@@ -4,6 +4,8 @@ package org.example.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Setter
 @Getter
@@ -21,5 +23,8 @@ public class TuitionLoan {
     private String price;
 
     private String section;
+
+    @OneToMany
+    private List<StudentLoan> studentLoans;
 
 }

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 
 @Entity
@@ -52,5 +53,8 @@ public class Student {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "studentProfile_id")
     private StudentProfile studentProfile;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<StudentLoan> studentLoans;
 
 }
