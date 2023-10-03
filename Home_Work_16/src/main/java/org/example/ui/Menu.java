@@ -15,7 +15,7 @@ import java.util.List;
 
 public class Menu extends BaseRepository {
     public static void main(String[] args) {
-
+menu();
     }
 
     public static void menu(){

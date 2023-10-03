@@ -20,13 +20,13 @@ public class StudentLoan {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private long moneyAmount;
+    private String moneyAmount;
 
     private long bankCardNumber;
 
     private String cvv2;
 
-    private LocalDate expiredDate;
+    private String expiredDate;
 
     private int installments;
 

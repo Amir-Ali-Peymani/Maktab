@@ -65,7 +65,7 @@ public class Constant {
     public static final String STUDENT_ID_NUMBER_NOTICE = "- Student Code should contain 10 characters \n" +
             "- It should be from number 0 - 9 ";
 
-    public static final String BIRTH_DATE_VALID_FORM = "yyyy-MM-dd";
+    public static final String YEAR_MONTH_DAY = "yyyy-MM-dd";
 
     public static final String BIRTH_DATE_NOTICE = "- If the day is one digit put zero before it \n"+
             "Enter your birth date (yyyy-MM-dd): ";
@@ -103,9 +103,7 @@ public class Constant {
 
     public static final String ADMINISTRATIVE_NAME = "Administrative: ";
 
-    public static final String EDUCATIONAL_LEVEL_NAME = "Educational Level: ";
-
-    public static final String APPROVAL_TYPE_NAME = "Approval Type: ";
+    public static final String FIRST_DAY_OF_MONTH = "01/";
 
     public static final String PAYMENT_TYPE_METHOD_NAME ="Once in the whole half semester";
 
@@ -142,6 +140,14 @@ public class Constant {
     public static final String SECTION_THREE = "Specialist Doctor discontinuous";
 
     public static final String FAIL = "Sign in Failure";
+
+    public static final String BANK_NUMBER = "please write your bank card number: ";
+
+    public static final String CVV2 = "please enter your cvv2: ";
+
+    public static final String CARD_EXPIRED_DATE = "please enter your card expiration date: ";
+
+    public static final String INSTALLMENTS = "your installments: ";
 
     public static final String DOUBLE_DOT = " : ";
 
