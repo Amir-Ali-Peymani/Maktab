@@ -7,6 +7,7 @@ import org.example.Q1.service.Impl.PersonServiceImpl;
 import org.example.Q1.service.PersonService;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class PersonBusiness {
 
@@ -23,6 +24,31 @@ public class PersonBusiness {
         personService.savePerson(person);
     }
 
+    public static Person getPersonById(long id){
+        return personService.getPersonById(id);
+    }
+
+
+    public static List<Person> getAllPerson(){
+        return personService.getAllPerson();
+    }
+
+
+    public static void updatePerson(long id, String name, String lastName, LocalDate birthDate){
+        Person person = personService.getPersonById(id);
+        if (person != null){
+            person.setName(name);
+            person.setLastName(lastName);
+            person.setBirthDate(birthDate);
+        }
+    }
+
+    public static void deletePerson(Long id){
+        Person person = personService.getPersonById(id);
+        if (person != null){
+            personService.deletePerson(person);
+        }
+    }
 
 
 }
