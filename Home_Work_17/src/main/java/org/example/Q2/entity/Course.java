@@ -24,7 +24,7 @@ public class Course {
     @JoinColumn(name = "student_id")
     private Student student;
 
-    @OneToOne(mappedBy =  "Course")
+    @OneToOne
     private StudentCourseRating studentCourseRating;
 
 }

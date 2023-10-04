@@ -40,7 +40,6 @@ public class PersonBusiness  extends BaseRepository {
 
 
     public static List<Person> getAllPerson(){
-//        return personService.getAllPerson();
         List<Person> people = personService.getAllPerson();
         logger.info("Retrieved {} people", people.size());
         return people;
@@ -48,12 +47,6 @@ public class PersonBusiness  extends BaseRepository {
 
 
     public static void updatePerson(long id, String name, String lastName, LocalDate birthDate){
-//        Person person = personService.getPersonById(id);
-//        if (person != null){
-//            person.setName(name);
-//            person.setLastName(lastName);
-//            person.setBirthDate(birthDate);
-//        }
         Person person = personService.getPersonById(id);
         if (person != null) {
             person.setName(name);
@@ -67,10 +60,6 @@ public class PersonBusiness  extends BaseRepository {
     }
 
     public static void deletePerson(Long id){
-//        Person person = personService.getPersonById(id);
-//        if (person != null){
-//            personService.deletePerson(person);
-//        }
         Person person = personService.getPersonById(id);
         if (person != null) {
             personService.deletePerson(person);

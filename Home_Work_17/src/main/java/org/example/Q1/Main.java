@@ -10,13 +10,13 @@ public class Main {
         LocalDate specificDate = LocalDate.of(2023, 10, 4);
         PersonBusiness.createPersonBusiness("John","peymania", specificDate );
 
-        PersonBusiness.getPersonById(1L);
-
-        PersonBusiness.getAllPerson();
-
-        PersonBusiness.updatePerson(1L, "jhon", "abassy", specificDate);
-
-        PersonBusiness.deletePerson(1L);
+//        PersonBusiness.getPersonById(1L);
+//
+//        PersonBusiness.getAllPerson();
+//
+//        PersonBusiness.updatePerson(1L, "jhon", "abassy", specificDate);
+//
+//        PersonBusiness.deletePerson(1L);
 
     }
 }

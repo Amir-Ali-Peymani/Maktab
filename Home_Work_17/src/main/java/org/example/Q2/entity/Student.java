@@ -21,7 +21,7 @@ public class Student {
 
     private String studentName;
 
-    @OneToMany(mappedBy = "Student")
+    @OneToMany
     List<Course> courses;
 
 }

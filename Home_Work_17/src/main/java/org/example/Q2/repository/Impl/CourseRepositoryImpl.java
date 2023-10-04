@@ -10,26 +10,31 @@ public class CourseRepositoryImpl extends BaseRepository implements CourseReposi
     @Override
     public void saveCourse(Course course) {
         em.getTransaction().begin();
-        em
+        em.persist(course);
+        em.getTransaction().commit();
     }
 
     @Override
     public Course getCourseById(Long id) {
-        return null;
+        return em.find(Course.class, id);
     }
 
     @Override
     public List<Course> getAllCourse() {
-        return null;
+        return em.createQuery("SELECT c FROM Course c", Course.class).getResultList();
     }
 
     @Override
     public void updateCourse(Course course) {
-
+        em.getTransaction().begin();
+        em.remove(em.contains(course) ? course : em.merge(course));
+        em.getTransaction().commit();
     }
 
     @Override
     public void deleteCourse(Course course) {
-
+        em.getTransaction().begin();
+        em.remove(em.contains(course) ? course : em.merge(course));
+        em.getTransaction().commit();
     }
 }
