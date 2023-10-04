@@ -17,4 +17,3 @@ public interface PersonService {
     void deletePerson(Person person);
 
 }
-

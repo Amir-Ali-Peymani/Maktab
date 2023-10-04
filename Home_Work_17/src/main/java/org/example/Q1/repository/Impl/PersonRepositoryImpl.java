@@ -1,5 +1,6 @@
 package org.example.Q1.repository.Impl;
 
+
 import org.example.Q1.base.BaseRepository;
 import org.example.Q1.entity.Person;
 import org.example.Q1.repository.PersonRepository;
@@ -7,6 +8,7 @@ import org.example.Q1.repository.PersonRepository;
 import java.util.List;
 
 public class PersonRepositoryImpl extends BaseRepository implements PersonRepository {
+
     @Override
     public void savePerson(Person person) {
         em.getTransaction().begin();
@@ -21,7 +23,7 @@ public class PersonRepositoryImpl extends BaseRepository implements PersonReposi
 
     @Override
     public List<Person> getAllPerson() {
-        return em.createQuery("SELECT p FROM Person p" , Person.class).getResultList();
+        return em.createQuery("SELECT p FROM Person p", Person.class).getResultList();
     }
 
     @Override
