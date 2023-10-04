@@ -1,8 +1,8 @@
-package org.example.repository.Impl;
+package org.example.Q1.repository.Impl;
 
-import org.example.base.BaseRepository;
-import org.example.entity.Person;
-import org.example.repository.PersonRepository;
+import org.example.Q1.base.BaseRepository;
+import org.example.Q1.entity.Person;
+import org.example.Q1.repository.PersonRepository;
 
 import java.util.List;
 

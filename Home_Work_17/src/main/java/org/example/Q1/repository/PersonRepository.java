@@ -1,6 +1,6 @@
-package org.example.repository;
+package org.example.Q1.repository;
 
-import org.example.entity.Person;
+import org.example.Q1.entity.Person;
 
 import java.util.List;
 
