@@ -19,6 +19,7 @@ public class CourseBusiness {
         Course course = new Course();
         course.setCourseName(courseName);
         course.setStudent(student);
+        courseService.saveCourse(course);
         return course;
     }
 

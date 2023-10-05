@@ -24,7 +24,9 @@ public class Course {
     @JoinColumn(name = "student_id")
     private Student student;
 
-    @OneToOne
+
+    @OneToOne(mappedBy = "course", cascade = CascadeType.ALL)
     private StudentCourseRating studentCourseRating;
+
 
 }

@@ -27,8 +27,9 @@ public class StudentCourseRating {
 
     private String comment;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "course_id")
     private Course course;
+
 
 }
